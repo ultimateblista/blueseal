@@ -12,3 +12,7 @@ blueseal-production.zip
 # OS files
 .DS_Store
 Thumbs.db
+
+# Large RAW image files (not needed for web)
+*.CR2
+*.cr2
