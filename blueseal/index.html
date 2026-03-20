@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Seal Energy Group | Manufacturing Africa's Future</title>
+<meta name="description" content="Africa's leading indigenous chemical manufacturer. $12.5M production facility. 20+ industries. Pan-African vision.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* CRITICAL CSS - Prevent FOUC */
+body{visibility:hidden}
+body.loaded{visibility:visible}
+.nav{opacity:0;transition:opacity 0.2s}
+.nav.loaded{opacity:1}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0A1628;
+  --navy-2:#0F2040;
+  --navy-3:#152a52;
+  --blue:#1565C0;
+  --blue-bright:#1976D2;
+  --gold:#C9A94A;
+  --gold-2:#E8C96A;
+  --gold-3:#F5DFA0;
+  --white:#FFFFFF;
+  --off:#F6F7FA;
+  --text:#0A1628;
+  --text-2:#2C3A4E;
+  --text-3:#5A6A7E;
+  --grad-hero:linear-gradient(135deg,#060E1C 0%,#0A1628 25%,#0F2040 50%,#0D3570 75%,#0A4A9A 100%);
+  --grad-dark:linear-gradient(160deg,#0A1628 0%,#0F2040 50%,#122550 100%);
+  --grad-gold:linear-gradient(90deg,#A8832A 0%,#E8C96A 45%,#C9A94A 75%,#A8832A 100%);
+  --font-display:'Cormorant Garamond',Georgia,serif;
+  --font-body:'DM Sans',system-ui,sans-serif;
+  --font-mono:'DM Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--text);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ═══ NAV ═══ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(10,22,40,.97);backdrop-filter:blur(24px);border-bottom-color:rgba(255,255,255,.07)}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo img{height:40px;width:auto}
+.nav-logo-text{font:600 15px/1.2 var(--font-body);color:var(--white);letter-spacing:.01em}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font:500 12.5px/1 var(--font-body);color:rgba(255,255,255,.7);text-decoration:none;letter-spacing:.05em;text-transform:uppercase;position:relative;transition:color .25s;padding-bottom:4px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:50%;right:50%;height:1px;background:var(--gold);transition:left .3s,right .3s}
+.nav-links a:hover{color:var(--white)}
+.nav-links a:hover::after{left:0;right:0}
+.nav-cta{font:600 11.5px/1 var(--font-body);color:var(--navy);background:var(--grad-gold);padding:12px 24px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:opacity .25s,transform .25s;box-shadow:0 4px 20px rgba(201,169,74,.3)}
+.nav-cta:hover{opacity:.9;transform:translateY(-1px)}
+
+/* ═══ HERO ═══ */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;background:var(--grad-hero);background-size:300% 300%;animation:gradShift 18s ease infinite}
+@keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(125deg,transparent 0px,transparent 80px,rgba(255,255,255,.018) 80px,rgba(255,255,255,.018) 81px);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,169,74,.3),transparent)}
+.hero-canvas{position:absolute;inset:0;pointer-events:none}
+.hero-left{padding:140px 0 100px 80px;position:relative;z-index:2}
+.hero-label{font:500 10.5px/1 var(--font-body);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;display:flex;align-items:center;gap:12px}
+.hero-label::before{content:'';width:32px;height:1px;background:var(--gold)}
+.hero-h1{font:300 clamp(3.2rem,6.5vw,6.2rem)/1.05 var(--font-display);color:var(--white);margin-bottom:0}
+.hero-h1 em{font-style:italic;color:var(--gold)}
+.hero-rule{width:56px;height:1px;background:var(--grad-gold);margin:28px 0}
+.hero-sub{font:300 1.15rem/1.75 var(--font-body);color:rgba(255,255,255,.65);max-width:440px;margin-bottom:48px}
+.hero-btns{display:flex;gap:16px;align-items:center}
+.btn-gold{font:600 11.5px/1 var(--font-body);letter-spacing:.07em;text-transform:uppercase;color:var(--navy);background:var(--grad-gold);padding:16px 36px;border-radius:2px;text-decoration:none;transition:transform .25s,box-shadow .25s;box-shadow:0 4px 24px rgba(201,169,74,.35);display:inline-block}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(201,169,74,.5)}
+.btn-ghost{font:500 11.5px/1 var(--font-body);letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.18);padding:15px 32px;border-radius:2px;text-decoration:none;transition:border-color .25s,color .25s;display:inline-block;backdrop-filter:blur(4px)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hero-scroll{position:absolute;bottom:40px;left:80px;display:flex;align-items:center;gap:12px;z-index:2}
+.hero-scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollAnim 2s ease-in-out infinite}
+@keyframes scrollAnim{0%,100%{transform:scaleY(1);transform-origin:top}50%{transform:scaleY(.6);transform-origin:top}}
+.hero-scroll-text{font:400 10px/1 var(--font-body);letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+
+.hero-right{position:relative;z-index:2;height:100%;display:flex;align-items:center;padding:120px 60px 100px 20px}
+.hero-img-wrap{position:relative;width:100%;max-width:520px}
+.hero-img-clip{width:100%;aspect-ratio:4/3;clip-path:polygon(8% 0,100% 0,100% 100%,0 100%);overflow:hidden;border-radius:0 4px 4px 0}
+.hero-img-clip img{width:100%;height:100%;object-fit:cover}
+.hero-float-card{position:absolute;bottom:-20px;left:-28px;background:rgba(10,22,40,.92);border:1px solid rgba(201,169,74,.25);backdrop-filter:blur(20px);padding:20px 24px;border-radius:4px;min-width:200px}
+.hero-float-card-label{font:500 9px/1 var(--font-body);letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.hero-float-card-val{font:300 1.5rem/1 var(--font-display);color:var(--white)}
+.hero-float-card-sub{font:400 11px/1 var(--font-body);color:rgba(255,255,255,.45);margin-top:6px;letter-spacing:.04em}
+
+/* ═══ IMPACT BAR ═══ */
+.impact{background:var(--grad-dark);padding:72px 80px;position:relative;overflow:hidden}
+.impact::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0,transparent 119px,rgba(255,255,255,.025) 119px,rgba(255,255,255,.025) 120px)}
+.impact-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;gap:24px}
+.impact-stat{flex:1;text-align:center;position:relative;padding:0 24px}
+.impact-stat:not(:last-child)::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);height:48px;width:1px;background:linear-gradient(to bottom,transparent,rgba(201,169,74,.35),transparent)}
+.impact-num{font:500 clamp(2rem,3.5vw,2.8rem)/1 var(--font-mono);background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;margin-bottom:10px}
+.impact-lbl{font:400 10.5px/1 var(--font-body);letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+
+/* ═══ SECTIONS ═══ */
+.sec-label{font:500 10.5px/1 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.sec-label::before{content:'';width:24px;height:1px;background:var(--gold)}
+.sec-title{font:300 clamp(2rem,3.5vw,3.4rem)/1.12 var(--font-display);color:var(--text)}
+.sec-title.white{color:var(--white)}
+.sec-rule{width:48px;height:1px;background:var(--grad-gold);margin:24px 0}
+
+/* ═══ ABOUT ═══ */
+.about{padding:120px 80px;display:grid;grid-template-columns:55fr 45fr;gap:80px;align-items:center;max-width:1400px;margin:0 auto}
+.about-text .sec-title{margin-bottom:0}
+.about-body{font:300 1.05rem/1.8 var(--font-body);color:var(--text-2);margin:28px 0 40px}
+.about-pull{border-left:2px solid var(--gold);padding-left:20px;margin:32px 0;font:400 .95rem/1.7 var(--font-body);color:var(--text-3);font-style:italic}
+.btn-outline{font:600 11px/1 var(--font-body);letter-spacing:.07em;text-transform:uppercase;color:var(--text);border:1.5px solid var(--text);padding:14px 30px;border-radius:2px;text-decoration:none;transition:background .25s,color .25s;display:inline-block}
+.btn-outline:hover{background:var(--text);color:var(--white)}
+.about-img-wrap{position:relative}
+.about-img-clip{aspect-ratio:3/4;overflow:hidden;border-radius:4px;margin-right:-48px}
+.about-img-clip img{width:100%;height:100%;object-fit:cover}
+.about-float{position:absolute;top:40px;right:0;background:rgba(10,22,40,.9);border:1px solid rgba(201,169,74,.2);backdrop-filter:blur(16px);padding:18px 22px;border-radius:3px;z-index:2}
+.about-float-badge{display:inline-block;background:var(--gold);color:var(--navy);font:700 9px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:1px;margin-bottom:10px}
+.about-float p{font:300 .9rem/1.5 var(--font-body);color:rgba(255,255,255,.8);max-width:160px}
+
+/* ═══ VISION STRIP ═══ */
+.vision{background:var(--grad-dark);padding:120px 80px;position:relative;overflow:hidden;text-align:center}
+.vision::before{content:'\201C';position:absolute;top:-60px;left:50%;transform:translateX(-50%);font:300 28rem/1 var(--font-display);color:rgba(201,169,74,.04);pointer-events:none;line-height:1}
+.vision-quote{font:300 clamp(1.6rem,3vw,2.6rem)/1.4 var(--font-display);color:var(--white);font-style:italic;max-width:780px;margin:0 auto 40px;position:relative;z-index:1}
+.vision-rule{width:60px;height:1px;background:var(--grad-gold);margin:0 auto 24px}
+.vision-attr{font:500 11px/1 var(--font-body);letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.vision-attr span{display:block;font:300 .875rem/1.6 var(--font-body);letter-spacing:.04em;color:rgba(255,255,255,.45);margin-top:6px;text-transform:none}
+
+/* ═══ FACTORY 2 BANNER ═══ */
+.factory2{position:relative;padding:40px 80px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(90deg,#0A2848 0%,#0D3060 50%,#0A2848 100%);overflow:hidden;gap:32px}
+.factory2::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent 0%,var(--gold) 20%,var(--gold-2) 50%,var(--gold) 80%,transparent 100%);animation:shimmer 3s ease-in-out infinite}
+@keyframes shimmer{0%,100%{opacity:.6}50%{opacity:1}}
+.factory2-tag{font:700 9px/1 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);background:rgba(201,169,74,.12);border:1px solid rgba(201,169,74,.2);padding:6px 12px;border-radius:1px;white-space:nowrap}
+.factory2-content h3{font:500 1.05rem/1 var(--font-body);color:var(--white);margin-bottom:6px}
+.factory2-content p{font:300 .9rem/1 var(--font-body);color:rgba(255,255,255,.55)}
+.btn-gold-sm{font:600 10.5px/1 var(--font-body);letter-spacing:.07em;text-transform:uppercase;color:var(--navy);background:var(--grad-gold);padding:13px 24px;border-radius:2px;text-decoration:none;white-space:nowrap;transition:opacity .2s}
+.btn-gold-sm:hover{opacity:.85}
+
+/* ═══ COMPANIES ═══ */
+.companies{background:var(--grad-dark);padding:120px 80px}
+.companies-inner{max-width:1280px;margin:0 auto}
+.companies-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:64px}
+.companies-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06)}
+.co-card{background:rgba(10,22,40,.6);padding:40px 32px;transition:background .3s;cursor:pointer;position:relative;overflow:hidden}
+.co-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad-gold);transform:scaleX(0);transition:transform .35s;transform-origin:left}
+.co-card:hover{background:rgba(15,32,64,.9)}
+.co-card:hover::before{transform:scaleX(1)}
+.co-icon{width:44px;height:44px;border:1px solid rgba(201,169,74,.25);display:flex;align-items:center;justify-content:center;margin-bottom:24px;border-radius:2px}
+.co-icon svg{opacity:.7}
+.co-name{font:500 1rem/1.3 var(--font-body);color:var(--white);margin-bottom:10px}
+.co-desc{font:300 .875rem/1.65 var(--font-body);color:rgba(255,255,255,.45);margin-bottom:24px}
+.co-link{font:500 10.5px/1 var(--font-body);color:var(--gold);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;display:flex;align-items:center;gap:6px}
+.co-link svg{transition:transform .25s}
+.co-card:hover .co-link svg{transform:translateX(4px)}
+
+/* ═══ NEWS ═══ */
+.news{padding:120px 80px;background:var(--off)}
+.news-inner{max-width:1280px;margin:0 auto}
+.news-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.news-card{background:var(--white);border:1px solid rgba(10,22,40,.08);border-radius:4px;overflow:hidden;transition:box-shadow .3s,transform .3s}
+.news-card:hover{box-shadow:0 12px 48px rgba(10,22,40,.1);transform:translateY(-4px)}
+.news-img{aspect-ratio:16/9;overflow:hidden}
+.news-img img{width:100%;height:100%;object-fit:cover}
+.news-body{padding:28px}
+.news-tag{font:700 9px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--navy);background:rgba(201,169,74,.12);border:1px solid rgba(201,169,74,.2);padding:4px 10px;border-radius:1px;display:inline-block;margin-bottom:14px}
+.news-date{font:400 11.5px/1 var(--font-body);color:var(--text-3);margin-bottom:12px}
+.news-title{font:600 1.05rem/1.4 var(--font-body);color:var(--text);margin-bottom:12px}
+.news-excerpt{font:300 .9rem/1.7 var(--font-body);color:var(--text-2);margin-bottom:20px}
+.news-readmore{font:600 10.5px/1 var(--font-body);color:var(--blue);letter-spacing:.07em;text-transform:uppercase;text-decoration:none;display:flex;align-items:center;gap:6px;transition:gap .2s}
+.news-card:hover .news-readmore{gap:10px}
+
+/* ═══ CTA CLOSE ═══ */
+.cta-close{background:var(--navy);padding:120px 80px;text-align:center;position:relative;overflow:hidden}
+.cta-close::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(21,101,192,.15) 0%,transparent 70%);pointer-events:none}
+.cta-close .sec-title{max-width:600px;margin:0 auto}
+.cta-close-sub{font:300 1.1rem/1.7 var(--font-body);color:rgba(255,255,255,.55);max-width:480px;margin:24px auto 48px}
+.cta-btns{display:flex;gap:16px;justify-content:center}
+
+/* ═══ FOOTER ═══ */
+.footer{background:#060E1C;padding:72px 80px 0}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1.2fr 1fr 1.1fr;gap:80px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.07)}
+.footer-brand-logo{display:flex;align-items:center;gap:10px;margin-bottom:18px;text-decoration:none}
+.footer-brand-logo img{height:44px;width:auto}
+.footer-brand-tagline{font:300 .95rem/1.65 var(--font-display);color:rgba(255,255,255,.4);font-style:italic;margin-bottom:28px;max-width:240px}
+.footer-social{display:flex;gap:12px}
+.footer-social a{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;border-radius:2px;transition:border-color .25s,background .25s}
+.footer-social a:hover{border-color:var(--gold);background:rgba(201,169,74,.08)}
+.footer-social a svg{opacity:.55;transition:opacity .25s}
+.footer-social a:hover svg{opacity:1}
+.footer-col-title{font:600 10px/1 var(--font-body);letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer-links a{font:300 .9rem/1 var(--font-body);color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+.footer-addr-block{margin-bottom:24px}
+.footer-addr-block:last-child{margin-bottom:0}
+.footer-addr-tag{font:600 9px/1 var(--font-body);letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.footer-addr-text{font:300 .875rem/1.65 var(--font-body);color:rgba(255,255,255,.45)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid rgba(255,255,255,.05);margin-top:0}
+.footer-copy{font:300 11.5px/1 var(--font-body);color:rgba(255,255,255,.3)}
+.footer-staff{font:300 11.5px/1 var(--font-body);color:rgba(255,255,255,.3);display:flex;align-items:center;gap:8px}
+.footer-staff a{color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.footer-staff a:hover{color:var(--gold);border-bottom-color:rgba(201,169,74,.4)}
+.footer-dot{opacity:.3}
+
+/* ═══ REVEALS ═══ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.up{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+
+@media(max-width:960px){
+  .nav{padding:0 24px}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .hero-left{padding:120px 24px 80px}
+  .impact{padding:56px 24px}
+  .impact-inner{flex-wrap:wrap;gap:32px}
+  .impact-stat{flex:1 1 40%;min-width:140px}
+  .impact-stat::after{display:none}
+  .about{grid-template-columns:1fr;padding:80px 24px;gap:40px}
+  .about-img-clip{margin-right:0}
+  .vision{padding:80px 24px}
+  .factory2{flex-direction:column;text-align:center;padding:32px 24px}
+  .companies{padding:80px 24px}
+  .companies-head{flex-direction:column;gap:20px;align-items:flex-start}
+  .companies-grid{grid-template-columns:1fr 1fr}
+  .news{padding:80px 24px}
+  .news-head{flex-direction:column;gap:20px;align-items:flex-start}
+  .news-grid{grid-template-columns:1fr}
+  .cta-close{padding:80px 24px}
+  .cta-btns{flex-direction:column;align-items:center}
+  .footer{padding:56px 24px 0}
+  .footer-top{grid-template-columns:1fr;gap:48px}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/images/logo-dark.png" alt="Blue Seal Energy Group">
+    <span class="nav-logo-text">Blue Seal<br>Energy Group</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="companies.html">Companies</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="industries.html">Industries</a></li>
+    <li><a href="operations.html">Operations</a></li>
+    <li><a href="investors.html">Investors</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Partner With Us</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+  <div class="hero-left">
+    <div class="hero-label">Pan-African Industrial Leadership</div>
+    <h1 class="hero-h1">Manufacturing<br><em>Africa's</em> Future.</h1>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">Africa's leading indigenous chemical manufacturer. 5 million litres. 20+ industries. One mission.</p>
+    <div class="hero-btns">
+      <a href="products.html" class="btn-gold">Explore Our Products</a>
+      <a href="contact.html" class="btn-ghost">Partner With Us</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-wrap">
+      <div class="hero-img-clip">
+        <img src="assets/images/BSCPP LAUNCH PIC.jpg" alt="Blue Seal Chemical Production Plant">
+      </div>
+      <div class="hero-float-card">
+        <div class="hero-float-card-label">Production Facility</div>
+        <div class="hero-float-card-val">$12.5M</div>
+        <div class="hero-float-card-sub">Ibeju-Lekki, Lagos</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span class="hero-scroll-text">Scroll</span>
+  </div>
+</section>
+
+<!-- ═══ IMPACT BAR ═══ -->
+<section class="impact">
+  <div class="impact-inner">
+    <div class="impact-stat reveal">
+      <span class="impact-num" data-target="5" data-suffix="M L/Day">0</span>
+      <span class="impact-lbl">Production Capacity</span>
+    </div>
+    <div class="impact-stat reveal reveal-delay-1">
+      <span class="impact-num" data-target="2000" data-suffix="+">0</span>
+      <span class="impact-lbl">Jobs Created</span>
+    </div>
+    <div class="impact-stat reveal reveal-delay-2">
+      <span class="impact-num" data-target="20" data-suffix="+">0</span>
+      <span class="impact-lbl">Industries Served</span>
+    </div>
+    <div class="impact-stat reveal reveal-delay-3">
+      <span class="impact-num" data-target="3">0</span>
+      <span class="impact-lbl">Countries Active</span>
+    </div>
+    <div class="impact-stat reveal reveal-delay-4">
+      <span class="impact-num" data-target="12.5" data-prefix="$" data-suffix="M">0</span>
+      <span class="impact-lbl">Investment</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section>
+  <div class="about">
+    <div class="about-text">
+      <div class="sec-label reveal">Who We Are</div>
+      <h2 class="sec-title reveal">A Pan-African<br>Industrial Powerhouse</h2>
+      <div class="sec-rule reveal"></div>
+      <p class="about-body reveal">Blue Seal Energy Group is Africa's leading indigenous chemical manufacturer, operating a world-class $12.5 million production facility in Ibeju-Lekki, Lagos — and expanding rapidly across the continent.</p>
+      <blockquote class="about-pull reveal">Founded in 2006, we have grown from a trading company into a full-fledged chemical manufacturer, serving over 20 industries across oil & gas, water management, agriculture, and environmental services.</blockquote>
+      <a href="about.html" class="btn-outline reveal">Our Full Story</a>
+    </div>
+    <div class="about-img-wrap reveal">
+      <div class="about-img-clip">
+        <img src="assets/images/drone - Edited (1).jpg" alt="Aerial Plant View">
+      </div>
+      <div class="about-float">
+        <div class="about-float-badge">Expansion in Motion</div>
+        <p>Factory 2 – Delta SEZ groundbreaking Q2 2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VISION STRIP ═══ -->
+<section class="vision">
+  <blockquote class="vision-quote reveal">"10 factories across Africa in 10–15 years, re-industrialising the continent from within."</blockquote>
+  <div class="vision-rule reveal"></div>
+  <div class="vision-attr reveal">
+    Dr. Doyle R. Edeni
+    <span>Founder &amp; President/CEO, Blue Seal Energy Group Inc.</span>
+  </div>
+</section>
+
+<!-- ═══ FACTORY 2 BANNER ═══ -->
+<div class="factory2">
+  <div class="factory2-tag">Expansion in Motion</div>
+  <div class="factory2-content">
+    <h3>Factory 2 – Delta Special Economic Zone, Kwale, Delta State</h3>
+    <p>Groundbreaking: Q2 2026  ·  Government-backed  ·  Pan-African rollout</p>
+  </div>
+  <a href="news.html" class="btn-gold-sm">Learn More →</a>
+</div>
+
+<!-- ═══ COMPANIES ═══ -->
+<section class="companies">
+  <div class="companies-inner">
+    <div class="companies-head">
+      <div>
+        <div class="sec-label reveal">Our Group</div>
+        <h2 class="sec-title white reveal">Four Companies.<br>One Continental Vision.</h2>
+      </div>
+      <a href="companies.html" class="btn-ghost reveal">View All Companies →</a>
+    </div>
+    <div class="companies-grid reveal">
+      <div class="co-card">
+        <div class="co-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(201,169,74,0.8)" stroke-width="1.3"><path d="M2 20h20M4 20V10l8-6 8 6v10M9 20v-6h6v6"/></svg>
+        </div>
+        <div class="co-name">Blue Seal Chemical</div>
+        <div class="co-desc">Oilfield chemicals and production solutions for upstream, midstream, and downstream operations.</div>
+        <a href="companies.html" class="co-link">Explore <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M8 3l5 5-5 5"/></svg></a>
+      </div>
+      <div class="co-card">
+        <div class="co-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(201,169,74,0.8)" stroke-width="1.3"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="co-name">Blue Seal Water Solutions</div>
+        <div class="co-desc">Advanced water treatment chemicals for municipal, industrial, and commercial applications.</div>
+        <a href="companies.html" class="co-link">Explore <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M8 3l5 5-5 5"/></svg></a>
+      </div>
+      <div class="co-card">
+        <div class="co-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(201,169,74,0.8)" stroke-width="1.3"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="co-name">Blue Seal Agro-Allied</div>
+        <div class="co-desc">Agricultural chemicals, soil conditioners, and fertilizer additives for sustainable farming.</div>
+        <a href="companies.html" class="co-link">Explore <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M8 3l5 5-5 5"/></svg></a>
+      </div>
+      <div class="co-card">
+        <div class="co-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(201,169,74,0.8)" stroke-width="1.3"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <div class="co-name">Blue Seal Environmental</div>
+        <div class="co-desc">Environmental remediation, spill response, and waste management solutions.</div>
+        <a href="companies.html" class="co-link">Explore <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M8 3l5 5-5 5"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NEWS ═══ -->
+<section class="news">
+  <div class="news-inner">
+    <div class="news-head">
+      <div>
+        <div class="sec-label reveal">Latest</div>
+        <h2 class="sec-title reveal">News &amp; Milestones</h2>
+      </div>
+      <a href="news.html" class="btn-outline reveal">All News →</a>
+    </div>
+    <div class="news-grid">
+      <div class="news-card reveal">
+        <div class="news-img">
+          <img src="assets/images/BSCPP LAUNCH PIC.jpg" alt="Plant Launch">
+        </div>
+        <div class="news-body">
+          <span class="news-tag">Milestone</span>
+          <div class="news-date">February 14, 2025</div>
+          <div class="news-title">Blue Seal Achieves Grand Launch of $12.5M Production Plant</div>
+          <div class="news-excerpt">The Ibeju-Lekki facility officially launches, marking Africa's most significant indigenous chemical manufacturing milestone.</div>
+          <a href="news.html" class="news-readmore">Read More <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M8 3l5 5-5 5"/></svg></a>
+        </div>
+      </div>
+      <div class="news-card reveal reveal-delay-1">
+        <div class="news-img">
+          <img src="assets/images/drone - Edited (1).jpg" alt="U.S. Mission">
+        </div>
+        <div class="news-body">
+          <span class="news-tag">Recognition</span>
+          <div class="news-date">February 2026</div>
+          <div class="news-title">U.S. Mission to Nigeria Selects Blue Seal for Single Company Promotion</div>
+          <div class="news-excerpt">Blue Seal is endorsed as a benchmark for US-Nigeria commercial investment at a historic reception.</div>
+          <a href="news.html" class="news-readmore">Read More <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M8 3l5 5-5 5"/></svg></a>
+        </div>
+      </div>
+      <div class="news-card reveal reveal-delay-2">
+        <div class="news-img">
+          <img src="assets/images/20250805_115719@-1977798145.jpg" alt="Factory 2">
+        </div>
+        <div class="news-body">
+          <span class="news-tag">Expansion</span>
+          <div class="news-date">2026</div>
+          <div class="news-title">Factory 2 at Delta Special Economic Zone: Groundbreaking Set for Q2 2026</div>
+          <div class="news-excerpt">The second Blue Seal facility will be built within the Delta SEZ in Kwale, Delta State.</div>
+          <a href="news.html" class="news-readmore">Read More <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M8 3l5 5-5 5"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA CLOSE ═══ -->
+<section class="cta-close">
+  <div class="sec-label reveal" style="justify-content:center;margin-bottom:20px">Build With Us</div>
+  <h2 class="sec-title white reveal" style="text-align:center">Ready to Partner With<br><em style="font-style:italic;color:var(--gold)">Africa's</em> Industrial Future?</h2>
+  <p class="cta-close-sub reveal">Whether you're a buyer, investor, or government partner — we're building the continent together.</p>
+  <div class="cta-btns reveal">
+    <a href="contact.html" class="btn-gold">Partner With Us</a>
+    <a href="products.html" class="btn-ghost">Explore Products</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="footer-brand-logo">
+          <img src="assets/images/logo-light.png" alt="Blue Seal Energy Group">
+        </a>
+        <p class="footer-brand-tagline">Manufacturing Africa's Future — one facility at a time.</p>
+        <div class="footer-social">
+          <a href="#" title="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" title="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About Blue Seal</a></li>
+          <li><a href="companies.html">Our Companies</a></li>
+          <li><a href="products.html">Products &amp; Solutions</a></li>
+          <li><a href="industries.html">Industries Served</a></li>
+          <li><a href="operations.html">Our Operations</a></li>
+          <li><a href="investors.html">Investors &amp; Partners</a></li>
+          <li><a href="news.html">News &amp; Media</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Our Offices</div>
+        <div class="footer-addr-block">
+          <div class="footer-addr-tag">Lagos Factory (Primary)</div>
+          <div class="footer-addr-text">Blue Seal Chemical Production Plant<br>Origanrigan, Ibeju-Lekki<br>Lagos State, Nigeria</div>
+        </div>
+        <div class="footer-addr-block">
+          <div class="footer-addr-tag">Port Harcourt Office</div>
+          <div class="footer-addr-text">Address available on request</div>
+        </div>
+        <div class="footer-addr-block">
+          <div class="footer-addr-tag">Texas, USA Office</div>
+          <div class="footer-addr-text">Address available on request</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Blue Seal Energy Group. All rights reserved.</span>
+      <span class="footer-staff">
+        Staff Portal:
+        <a href="https://bluesealenergy.com/webmail" target="_blank" rel="noopener">Webmail</a>
+        <span class="footer-dot">·</span>
+        <a href="https://bluesealerp.com" target="_blank" rel="noopener">ERP Portal</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ═══ PREVENT FOUC - Show content immediately ═══ */
+document.body.classList.add('loaded');
+document.getElementById('nav').classList.add('loaded');
+
+/* ═══ NAV SCROLL ═══ */
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>60);
+},{passive:true});
+
+/* ═══ PARTICLES ═══ */
+const canvas=document.getElementById('heroCanvas');
+const ctx=canvas.getContext('2d');
+let particles=[];
+function resizeCanvas(){
+  canvas.width=canvas.offsetWidth;
+  canvas.height=canvas.offsetHeight;
+}
+function initParticles(){
+  particles=Array.from({length:55},()=>({
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height,
+    r:Math.random()*1.4+.4,
+    o:Math.random()*.2+.04,
+    vx:(Math.random()-.5)*.12,
+    vy:(Math.random()-.5)*.12
+  }));
+}
+function drawParticles(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p=>{
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.x<0)p.x=canvas.width;
+    if(p.x>canvas.width)p.x=0;
+    if(p.y<0)p.y=canvas.height;
+    if(p.y>canvas.height)p.y=0;
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(255,255,255,${p.o})`;
+    ctx.fill();
+  });
+  particles.forEach((a,i)=>{
+    particles.slice(i+1).forEach(b=>{
+      const dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<110){
+        ctx.beginPath();
+        ctx.moveTo(a.x,a.y);
+        ctx.lineTo(b.x,b.y);
+        ctx.strokeStyle=`rgba(255,255,255,${.04*(1-d/110)})`;
+        ctx.lineWidth=.5;
+        ctx.stroke();
+      }
+    });
+  });
+  requestAnimationFrame(drawParticles);
+}
+window.addEventListener('resize',()=>{resizeCanvas();initParticles();});
+resizeCanvas();initParticles();drawParticles();
+
+/* ═══ COUNTERS ═══ */
+function animateCounter(el){
+  const target=parseFloat(el.dataset.target);
+  const suffix=el.dataset.suffix||'';
+  const prefix=el.dataset.prefix||'';
+  const duration=1800;
+  const start=performance.now();
+  function update(now){
+    const progress=Math.min((now-start)/duration,1);
+    const ease=1-Math.pow(1-progress,3);
+    const val=target*ease;
+    el.textContent=prefix+(val<10?val.toFixed(1):Math.floor(val))+suffix;
+    if(progress<1)requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+/* ═══ INTERSECTION OBSERVER ═══ */
+const revealOpts={threshold:.12,rootMargin:'0px 0px -40px 0px'};
+const revealObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('up');
+      revealObs.unobserve(e.target);
+    }
+  });
+},revealOpts);
+document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
+
+const counterObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      animateCounter(e.target);
+      counterObs.unobserve(e.target);
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('.impact-num').forEach(el=>counterObs.observe(el));
+</script>
+</body>
+</html>

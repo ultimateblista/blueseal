@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News & Media | Blue Seal Energy Group</title>
+  <meta name="description" content="Latest news, milestones, and media coverage from Blue Seal Energy Group.">
+  <link rel="canonical" href="https://bluesealenergygroup.com/news.html">
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* FOUC PREVENTION */
+    body{visibility:hidden}
+    body.loaded{visibility:visible}
+    .nav{opacity:0;transition:opacity 0.2s}
+    .nav.loaded{opacity:1}
+
+    /* CSS RESET & BASE */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scroll-behavior:smooth}
+    body{font-family:var(--font-body);color:var(--text);background:var(--white);line-height:1.6;overflow-x:hidden}
+    img{max-width:100%;height:auto;display:block}
+    a{color:inherit;text-decoration:none}
+
+    /* DESIGN SYSTEM */
+    :root{
+      --font-display:'Cormorant Garamond',Georgia,serif;
+      --font-body:'DM Sans',system-ui,sans-serif;
+      --font-mono:'DM Mono',monospace;
+      --navy:#0A1628;
+      --navy-2:#0F2040;
+      --blue:#1565C0;
+      --gold:#C9A94A;
+      --gold-2:#E8C96A;
+      --white:#FFFFFF;
+      --off:#F6F7FA;
+      --text:#0A1628;
+      --text-2:#2C3A4E;
+      --text-3:#5A6A7E;
+      --grad-hero:linear-gradient(135deg,#060E1C 0%,#0A1628 25%,#0F2040 50%,#0D3570 75%,#0A4A9A 100%);
+      --grad-dark:linear-gradient(160deg,#0A1628 0%,#0F2040 50%,#122550 100%);
+      --grad-gold:linear-gradient(90deg,#A8832A 0%,#E8C96A 45%,#C9A94A 75%,#A8832A 100%);
+    }
+
+    /* LAYOUT */
+    .container{max-width:1280px;margin:0 auto;padding:0 48px}
+    @media(max-width:768px){.container{padding:0 24px}}
+
+    /* NAVIGATION */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--white);border-bottom:1px solid rgba(10,22,40,0.08);backdrop-filter:blur(12px);transition:all 0.3s ease}
+    .nav.scrolled{box-shadow:0 2px 20px rgba(10,22,40,0.08)}
+    .nav-inner{max-width:1280px;margin:0 auto;padding:0 48px;height:80px;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{display:flex;align-items:center;gap:14px;font-weight:600}
+    .nav-logo img{height:42px;width:auto}
+    .nav-logo-text{font:600 13px/1.3 var(--font-body);color:var(--navy);letter-spacing:-0.01em}
+    .nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+    .nav-links a{font:500 15px/1 var(--font-body);color:var(--text-2);transition:color 0.2s;position:relative}
+    .nav-links a:hover{color:var(--navy)}
+    .nav-links a.active::after{content:'';position:absolute;bottom:-8px;left:0;right:0;height:2px;background:var(--gold)}
+    .nav-cta{padding:10px 24px;background:var(--navy);color:var(--white);border-radius:4px;font:500 14px/1 var(--font-body);transition:all 0.2s}
+    .nav-cta:hover{background:var(--navy-2);transform:translateY(-1px)}
+    @media(max-width:1024px){
+      .nav-inner{padding:0 24px}
+      .nav-links{gap:24px}
+      .nav-links a{font-size:14px}
+    }
+    @media(max-width:768px){
+      .nav-links,.nav-cta{display:none}
+    }
+
+    /* PAGE HEADER */
+    .page-header{background:var(--grad-hero);padding:180px 0 120px;position:relative;overflow:hidden}
+    .page-header h1{font:300 64px/1.1 var(--font-display);color:var(--white);margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto;text-align:center}
+    .page-header p{font:400 18px/1.7 var(--font-body);color:rgba(255,255,255,0.8);max-width:700px;margin:0 auto;text-align:center}
+    @media(max-width:768px){.page-header h1{font-size:42px}}
+
+    /* NEWS GRID */
+    .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding:100px 0}
+    @media(max-width:1024px){.news-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.news-grid{grid-template-columns:1fr}}
+
+    .news-card{background:var(--white);border:1px solid rgba(10,22,40,0.1);border-radius:8px;padding:40px;transition:all 0.3s ease}
+    .news-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 12px 40px rgba(10,22,40,0.12)}
+    .news-tag{display:inline-block;background:var(--gold);color:var(--navy);font:700 10px/1 var(--font-body);letter-spacing:0.15em;text-transform:uppercase;padding:6px 12px;border-radius:12px;margin-bottom:12px}
+    .news-date{display:block;font:400 13px/1 var(--font-body);color:var(--text-3);margin-bottom:20px}
+    .news-card h3{font:600 20px/1.3 var(--font-body);color:var(--navy);margin-bottom:16px}
+    .news-card p{font:400 15px/1.7 var(--font-body);color:var(--text-2);margin:0}
+
+    /* MEDIA SECTION */
+    .media-section{background:var(--off);padding:100px 0;text-align:center}
+    .media-section h3{font:600 24px/1.2 var(--font-body);color:var(--navy);margin-bottom:16px}
+    .media-section p{font:400 16px/1.7 var(--font-body);color:var(--text-2);max-width:600px;margin:0 auto 32px}
+
+    /* BUTTONS */
+    .btn{display:inline-block;padding:14px 32px;border-radius:4px;font:500 15px/1 var(--font-body);transition:all 0.2s;cursor:pointer;border:none}
+    .btn-primary{background:var(--navy);color:var(--white)}
+    .btn-primary:hover{background:var(--navy-2);transform:translateY(-2px)}
+
+    /* FOOTER */
+    .footer{background:var(--navy);color:rgba(255,255,255,0.8);padding:80px 0 0}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:60px;padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,0.1)}
+    @media(max-width:1024px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.footer-grid{grid-template-columns:1fr}}
+    .footer-logo{height:48px;margin-bottom:20px}
+    .footer h4{font:600 16px/1 var(--font-body);color:var(--white);margin-bottom:24px}
+    .footer a{font:400 15px/1 var(--font-body);display:block;margin-bottom:12px;transition:color 0.2s}
+    .footer a:hover{color:var(--gold)}
+    .footer-address{margin-bottom:24px}
+    .footer-address strong{color:var(--white);display:block;margin-bottom:8px;font:500 14px/1 var(--font-body)}
+    .footer-address p{font-size:14px;line-height:1.6;margin:0}
+    .footer-bottom{padding:32px 0;text-align:center;font-size:14px}
+    .footer-bottom a{display:inline;color:var(--gold)}
+    .footer-bottom a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo-dark.png" alt="Blue Seal Energy Group">
+        <span class="nav-logo-text">Blue Seal<br>Energy Group</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="companies.html">Companies</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="operations.html">Operations</a></li>
+        <li><a href="investors.html">Investors</a></li>
+        <li><a href="news.html" class="active">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta">Partner With Us</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="container">
+      <h1>News & Milestones</h1>
+      <p>Latest updates, achievements, and media coverage from Blue Seal Energy Group.</p>
+    </div>
+  </header>
+
+  <!-- NEWS GRID -->
+  <section>
+    <div class="container">
+      <div class="news-grid">
+
+        <article class="news-card">
+          <span class="news-tag">MILESTONE</span>
+          <span class="news-date">February 14, 2025</span>
+          <h3>Blue Seal Achieves Grand Launch of $12.5M Production Plant</h3>
+          <p>The Blue Seal Chemical Production Plant in Ibeju-Lekki officially commenced operations, marking a historic moment for indigenous African manufacturing. The facility represents $12.5 million in investment and creates over 500 direct jobs with 2,000+ total jobs across the value chain.</p>
+        </article>
+
+        <article class="news-card">
+          <span class="news-tag">RECOGNITION</span>
+          <span class="news-date">February 2026</span>
+          <h3>U.S. Mission to Nigeria Selects Blue Seal for Single Company Promotion</h3>
+          <p>Blue Seal was honored at the U.S. Consulate Residence, Lagos, as part of the prestigious Single Company Promotion (SCP) programme. This recognition positions Blue Seal as a benchmark for US-Nigeria commercial and industrial investment, aligned with the US-Nigeria Commercial and Investment Partnership (CIP).</p>
+        </article>
+
+        <article class="news-card">
+          <span class="news-tag">EXPANSION</span>
+          <span class="news-date">2026</span>
+          <h3>Factory 2 at Delta Special Economic Zone: Groundbreaking Set for Q2 2026</h3>
+          <p>Blue Seal announces second manufacturing facility in partnership with Delta State Government. Located in the Delta Special Economic Zone in Kwale, Factory 2 represents the next phase of Blue Seal's continental expansion, backed by strong government alignment and support.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MEDIA ENQUIRIES -->
+  <section class="media-section">
+    <div class="container">
+      <h3>Media Enquiries</h3>
+      <p>For press releases, media kit, or interview requests, please contact our communications team.</p>
+      <a href="contact.html" class="btn btn-primary">Contact Media Team</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div>
+          <img src="assets/images/logo-dark.png" alt="Blue Seal Energy Group" class="footer-logo">
+          <p style="margin-bottom:20px">Manufacturing Africa's Future — one factory at a time.</p>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <a href="about.html">About Us</a>
+          <a href="companies.html">Our Companies</a>
+          <a href="products.html">Products</a>
+          <a href="operations.html">Operations</a>
+          <a href="investors.html">Investors</a>
+          <a href="news.html">News</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <div>
+          <h4>Products</h4>
+          <a href="products-oilfield.html">Oilfield Chemicals</a>
+          <a href="products-water.html">Water Treatment</a>
+          <a href="products-environmental.html">Environmental</a>
+          <a href="products-agro.html">Agro-Allied</a>
+          <a href="products-commodity.html">Commodity</a>
+          <a href="products-specialty.html">Specialty</a>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <div class="footer-address">
+            <strong>Lagos Factory (PRIMARY)</strong>
+            <p>Blue Seal Chemical Production Plant<br>Origanrigan, Ibeju-Lekki<br>Lagos State, Nigeria</p>
+          </div>
+          <div class="footer-address">
+            <strong>Port Harcourt Office</strong>
+            <p>Address to be confirmed</p>
+          </div>
+          <div class="footer-address">
+            <strong>Texas, USA Office</strong>
+            <p>Address to be confirmed</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Blue Seal Energy Group. All rights reserved. | Staff: <a href="https://bluesealenergy.com/webmail" target="_blank" rel="noopener">Webmail</a> | <a href="https://bluesealerp.com" target="_blank" rel="noopener">ERP Portal</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // FOUC PREVENTION
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('loaded');
+      document.getElementById('nav').classList.add('loaded');
+    });
+
+    // NAVIGATION SCROLL EFFECT
+    let lastScroll = 0;
+    const nav = document.getElementById('nav');
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+
+      if (currentScroll > 100) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+
+      lastScroll = currentScroll;
+    });
+  </script>
+
+</body>
+</html>

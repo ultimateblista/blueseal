@@ -1,0 +1,599 @@
+/* Blue Seal Energy Group - Industrial Chemical Manufacturing Design */
+/* Inspired by BASF, Dow Chemical, DuPont - Real B2B Aesthetic */
+
+/* ===========================
+   INDUSTRIAL DESIGN SYSTEM
+   =========================== */
+
+:root {
+  /* Blue Seal Brand Colors (from logo) */
+  --brand-purple:     #3E2583;
+  --brand-purple-dark:#2A1A5E;
+  --brand-blue:       #0096D6;
+  --brand-blue-light: #00B4E6;
+
+  /* Core Industrial Palette */
+  --primary-navy:     #3E2583;  /* Brand purple */
+  --secondary-blue:   #0096D6;  /* Brand blue */
+  --accent-gold:      #C9A94A;  /* Keep gold for accents */
+
+  /* Technical Grays */
+  --steel-gray:       #4A5568;
+  --metal-gray:       #718096;
+  --light-gray:       #E2E8F0;
+  --bg-technical:     #F7FAFC;
+
+  /* Status Colors (Industrial Standard) */
+  --status-success:   #48BB78;
+  --status-warning:   #ECC94B;
+  --status-info:      #0096D6;  /* Brand blue */
+
+  /* Typography - Professional */
+  --font-technical:   'IBM Plex Sans', -apple-system, system-ui, sans-serif;
+  --font-display:     'IBM Plex Serif', Georgia, serif;
+  --font-mono:        'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Spacing System (8px base) */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-12: 96px;
+
+  /* Professional Shadows (Subtle) */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ===========================
+   IMPORT IBM PLEX FONTS
+   =========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+/* ===========================
+   INDUSTRIAL TYPOGRAPHY
+   =========================== */
+
+body {
+  font-family: var(--font-technical);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--steel-gray);
+  background: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--primary-navy);
+  line-height: 1.2;
+  margin-bottom: var(--space-3);
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.875rem; }
+h4 { font-size: 1.5rem; }
+
+.technical-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--metal-gray);
+}
+
+/* ===========================
+   INDUSTRIAL HERO
+   =========================== */
+
+.industrial-hero {
+  position: relative;
+  min-height: 75vh;
+  background: linear-gradient(135deg, rgba(42, 26, 94, 0.95) 0%, rgba(62, 37, 131, 0.9) 50%, rgba(0, 150, 214, 0.85) 100%),
+              url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  display: flex;
+  align-items: center;
+  padding: var(--space-8) 0;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  background: rgba(0, 150, 214, 0.15);
+  border-left: 3px solid var(--brand-blue);
+  padding: var(--space-1) var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-blue-light);
+  margin-bottom: var(--space-3);
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 300;
+  color: white;
+  margin-bottom: var(--space-3);
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: var(--space-5);
+  line-height: 1.7;
+}
+
+/* ===========================
+   TECHNICAL DATA GRID
+   =========================== */
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--light-gray);
+  border: 1px solid var(--light-gray);
+  margin: var(--space-6) 0;
+}
+
+.data-cell {
+  background: white;
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.data-value {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary-navy);
+  display: block;
+  margin-bottom: var(--space-1);
+}
+
+.data-unit {
+  font-size: 0.75rem;
+  color: var(--brand-blue);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.data-label {
+  font-size: 0.875rem;
+  color: var(--metal-gray);
+  margin-top: var(--space-1);
+}
+
+/* ===========================
+   INDUSTRIAL CARDS
+   =========================== */
+
+.industrial-card {
+  background: white;
+  border: 1px solid var(--light-gray);
+  padding: var(--space-4);
+  transition: all 0.2s ease;
+}
+
+.industrial-card:hover {
+  border-color: var(--brand-blue);
+  box-shadow: 0 4px 12px rgba(0, 150, 214, 0.15);
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--bg-technical);
+  border: 2px solid var(--light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 24px;
+}
+
+.card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--primary-navy);
+  margin: 0;
+}
+
+.card-subtitle {
+  font-size: 0.875rem;
+  color: var(--metal-gray);
+  margin-top: var(--space-1);
+}
+
+.card-content {
+  color: var(--steel-gray);
+  line-height: 1.7;
+}
+
+/* ===========================
+   CERTIFICATION BADGES
+   =========================== */
+
+.certification-strip {
+  background: var(--bg-technical);
+  border-top: 1px solid var(--light-gray);
+  border-bottom: 1px solid var(--light-gray);
+  padding: var(--space-4) 0;
+}
+
+.cert-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.cert-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.cert-icon {
+  width: 64px;
+  height: 64px;
+  background: white;
+  border: 2px solid var(--light-gray);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary-navy);
+}
+
+.cert-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--metal-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ===========================
+   INDUSTRIAL BUTTONS
+   =========================== */
+
+.btn-industrial-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-light) 100%);
+  color: white;
+  font-family: var(--font-technical);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 14px 32px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 150, 214, 0.25);
+}
+
+.btn-industrial-primary:hover {
+  background: linear-gradient(135deg, var(--brand-blue-light) 0%, var(--brand-blue) 100%);
+  box-shadow: 0 6px 20px rgba(0, 150, 214, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-industrial-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: white;
+  color: var(--primary-navy);
+  font-family: var(--font-technical);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 14px 32px;
+  border: 2px solid var(--primary-navy);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-industrial-secondary:hover {
+  background: var(--primary-navy);
+  color: white;
+}
+
+/* ===========================
+   TECHNICAL TABLE
+   =========================== */
+
+.technical-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border: 1px solid var(--light-gray);
+  margin: var(--space-4) 0;
+}
+
+.technical-table thead {
+  background: var(--bg-technical);
+}
+
+.technical-table th {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--steel-gray);
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.technical-table td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--light-gray);
+  color: var(--steel-gray);
+}
+
+.technical-table tbody tr:hover {
+  background: var(--bg-technical);
+}
+
+/* ===========================
+   PRODUCT SPECIFICATION CARD
+   =========================== */
+
+.spec-card {
+  background: white;
+  border: 1px solid var(--light-gray);
+  overflow: hidden;
+}
+
+.spec-header {
+  background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-purple-dark) 100%);
+  color: white;
+  padding: var(--space-3) var(--space-4);
+}
+
+.spec-header h3 {
+  color: white;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.spec-code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--brand-blue-light);
+  margin-top: var(--space-1);
+}
+
+.spec-body {
+  padding: var(--space-4);
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.spec-row:last-child {
+  border-bottom: none;
+}
+
+.spec-label {
+  font-weight: 500;
+  color: var(--steel-gray);
+}
+
+.spec-value {
+  font-family: var(--font-mono);
+  color: var(--primary-navy);
+  font-weight: 600;
+}
+
+/* ===========================
+   INDUSTRY NAVIGATION
+   =========================== */
+
+.industry-nav {
+  background: white;
+  border-top: 1px solid var(--light-gray);
+  border-bottom: 1px solid var(--light-gray);
+  padding: var(--space-3) 0;
+}
+
+.industry-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--light-gray);
+}
+
+.industry-nav-item {
+  background: white;
+  padding: var(--space-3);
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.industry-nav-item:hover {
+  background: var(--bg-technical);
+}
+
+.industry-icon {
+  font-size: 32px;
+  margin-bottom: var(--space-2);
+}
+
+.industry-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-navy);
+}
+
+/* ===========================
+   FACILITY STATS BANNER
+   =========================== */
+
+.facility-banner {
+  background: linear-gradient(135deg, var(--brand-purple-dark) 0%, var(--brand-purple) 100%);
+  color: white;
+  padding: var(--space-5) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.facility-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-light) 100%);
+}
+
+.facility-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-4);
+}
+
+.facility-stat {
+  text-align: center;
+  padding: var(--space-3);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.facility-stat:last-child {
+  border-right: none;
+}
+
+.facility-number {
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--brand-blue-light) 0%, var(--brand-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  line-height: 1;
+}
+
+.facility-label {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ===========================
+   PROCESS FLOW INDICATOR
+   =========================== */
+
+.process-step {
+  position: relative;
+  padding-left: var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.process-step::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-light) 100%);
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px var(--brand-blue);
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.process-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 32px;
+  width: 2px;
+  height: calc(100% + var(--space-2));
+  background: var(--light-gray);
+}
+
+.process-title {
+  font-weight: 600;
+  color: var(--primary-navy);
+  margin-bottom: var(--space-1);
+}
+
+.process-description {
+  color: var(--steel-gray);
+  font-size: 0.875rem;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 768px) {
+  .data-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .facility-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cert-grid {
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .data-grid,
+  .facility-stats {
+    grid-template-columns: 1fr;
+  }
+}

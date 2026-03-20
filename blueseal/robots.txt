@@ -1,0 +1,10 @@
+# Blue Seal Energy Group - robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://bluesealenergygroup.com/sitemap.xml
+
+# Crawl delay (optional - be respectful to server resources)
+Crawl-delay: 1

@@ -1,0 +1,467 @@
+/*
+  BLUE SEAL ENERGY GROUP — DESIGN SYSTEM
+  Editorial luxury meets African industrial power
+  The Economist × Hermès × Shell
+*/
+
+/* ===========================
+   GOOGLE FONTS IMPORT
+   =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+/* ===========================
+   CSS RESET & BASE
+   =========================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-body);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ===========================
+   CSS CUSTOM PROPERTIES
+   =========================== */
+:root {
+  /* Brand Colors */
+  --navy:          #0B1E3D;
+  --navy-mid:      #1B3A6B;
+  --blue-bright:   #1565C0;
+  --gold:          #C9A94A;
+  --gold-light:    #E8C96A;
+  --white:         #FFFFFF;
+  --off-white:     #F7F8FA;
+  --text-dark:     #0B1E3D;
+  --text-body:     #2D3A4A;
+  --text-muted:    #6B7A8D;
+
+  /* Gradients */
+  --grad-hero: linear-gradient(135deg, #050E1F 0%, #0B1E3D 30%, #0D3060 60%, #0A4A8A 85%, #0060B8 100%);
+  --grad-section: linear-gradient(160deg, #0B1E3D 0%, #133060 100%);
+  --grad-gold: linear-gradient(90deg, #B8922A 0%, #E8C96A 50%, #B8922A 100%);
+  --grad-card: linear-gradient(145deg, rgba(13,48,96,0.9) 0%, rgba(11,30,61,0.95) 100%);
+
+  /* Glass Morphism */
+  --glass-bg: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.10);
+  --glass-border-gold: rgba(201,169,74,0.35);
+
+  /* Typography Scale */
+  --text-hero:   clamp(3.5rem, 8vw, 7rem);
+  --text-h1:     clamp(2.5rem, 5vw, 5rem);
+  --text-h2:     clamp(2rem, 3.5vw, 3.5rem);
+  --text-h3:     clamp(1.2rem, 2vw, 1.6rem);
+  --text-body:   1.0625rem;
+  --text-label:  0.6875rem;
+  --text-label-spacing: 0.2em;
+
+  /* Spacing */
+  --section-padding: 120px;
+  --container-max: 1280px;
+  --container-padding: 48px;
+
+  /* Transitions */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ===========================
+   TYPOGRAPHY SYSTEM
+   =========================== */
+.font-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+.font-display-bold {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+}
+
+.font-body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+}
+
+.font-mono {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: var(--text-h1);
+}
+
+h2 {
+  font-size: var(--text-h2);
+}
+
+h3 {
+  font-size: var(--text-h3);
+}
+
+p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: var(--text-body);
+  line-height: 1.75;
+  color: var(--text-body);
+  margin-bottom: 0;
+}
+
+em {
+  font-style: italic;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* ===========================
+   LAYOUT SYSTEM
+   =========================== */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+section {
+  padding: var(--section-padding) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+section.hero {
+  padding: 0;
+}
+
+section.impact-bar {
+  padding: 80px 0;
+}
+
+section.announcement {
+  padding: 48px 0;
+}
+
+/* ===========================
+   SECTION LABELS
+   =========================== */
+.section-label {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: var(--text-label);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--text-label-spacing);
+  color: var(--gold);
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 72px;
+}
+
+.section-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.section-label.centered {
+  padding-left: 0;
+  padding-bottom: 20px;
+}
+
+.section-label.centered::before {
+  left: 50%;
+  top: auto;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+/* ===========================
+   GOLD ACCENT ELEMENTS
+   =========================== */
+.gold-rule {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  margin: 32px 0;
+}
+
+.gold-rule.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gold-rule.long {
+  width: 100px;
+}
+
+/* ===========================
+   IMAGE PLACEHOLDERS
+   =========================== */
+.img-placeholder {
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, #0B1E3D 0%, #0D3060 50%, #0A4A8A 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.img-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 20px,
+    rgba(255,255,255,0.01) 20px,
+    rgba(255,255,255,0.01) 40px
+  );
+  pointer-events: none;
+}
+
+.img-placeholder-icon {
+  width: 32px;
+  height: 32px;
+  stroke: rgba(201,169,74,0.4);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.img-placeholder-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(201,169,74,0.5);
+}
+
+/* ===========================
+   UTILITY CLASSES
+   =========================== */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-white {
+  color: var(--white);
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.bg-navy {
+  background: var(--navy);
+}
+
+.bg-off-white {
+  background: var(--off-white);
+}
+
+.bg-grad-section {
+  background: var(--grad-section);
+}
+
+/* ===========================
+   GRID SYSTEM
+   =========================== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* ===========================
+   RESPONSIVE UTILITIES
+   =========================== */
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+}
+
+/* ===========================
+   RESPONSIVE TYPOGRAPHY
+   =========================== */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 80px;
+    --container-padding: 24px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .section-label {
+    padding-left: 52px;
+  }
+
+  .section-label::before {
+    width: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 60px;
+    --container-padding: 20px;
+  }
+
+  .section-label {
+    font-size: 0.625rem;
+  }
+}
+
+/* ===========================
+   SELECTION & FOCUS STATES
+   =========================== */
+::selection {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+::-moz-selection {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+/* ===========================
+   SCROLLBAR STYLING
+   =========================== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--off-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--navy-mid);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}

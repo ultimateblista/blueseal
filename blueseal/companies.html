@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Companies | Blue Seal Energy Group</title>
+<meta name="description" content="Four specialized companies delivering integrated chemical solutions across Africa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* CRITICAL CSS - Prevent FOUC */
+body{visibility:hidden}
+body.loaded{visibility:visible}
+.nav{opacity:0;transition:opacity 0.2s}
+.nav.loaded{opacity:1}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0A1628;
+  --navy-2:#0F2040;
+  --blue:#1565C0;
+  --gold:#C9A94A;
+  --gold-2:#E8C96A;
+  --white:#FFFFFF;
+  --off:#F6F7FA;
+  --text:#0A1628;
+  --text-2:#2C3A4E;
+  --text-3:#5A6A7E;
+  --grad-hero:linear-gradient(135deg,#060E1C 0%,#0A1628 25%,#0F2040 50%,#0D3570 75%,#0A4A9A 100%);
+  --grad-dark:linear-gradient(160deg,#0A1628 0%,#0F2040 50%,#122550 100%);
+  --grad-gold:linear-gradient(90deg,#A8832A 0%,#E8C96A 45%,#C9A94A 75%,#A8832A 100%);
+  --font-display:'Cormorant Garamond',Georgia,serif;
+  --font-body:'DM Sans',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--text);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ═══ NAV ═══ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between;transition:background .4s;background:rgba(10,22,40,.97);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo img{height:40px}
+.nav-logo-text{font:600 15px/1.2 var(--font-body);color:var(--white);letter-spacing:.01em}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font:500 12.5px/1 var(--font-body);color:rgba(255,255,255,.7);text-decoration:none;letter-spacing:.05em;text-transform:uppercase;position:relative;padding-bottom:4px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:50%;right:50%;height:1px;background:var(--gold);transition:left .3s,right .3s}
+.nav-links a:hover{color:var(--white)}
+.nav-links a:hover::after{left:0;right:0}
+.nav-cta{font:600 11.5px/1 var(--font-body);color:var(--navy);background:var(--grad-gold);padding:12px 24px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:2px;box-shadow:0 4px 20px rgba(201,169,74,.3)}
+
+/* ═══ SECTIONS ═══ */
+.page-header{min-height:50vh;display:flex;align-items:center;background:var(--grad-hero);padding:140px 80px 80px;position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(125deg,transparent 0,transparent 80px,rgba(255,255,255,.018) 80px,rgba(255,255,255,.018) 81px);pointer-events:none}
+.page-header h1{font:300 clamp(2.5rem,5vw,4.5rem)/1.1 var(--font-display);color:var(--white);margin-bottom:24px}
+.page-header p{font:300 1.15rem/1.75 var(--font-body);color:rgba(255,255,255,.7);max-width:680px}
+.sec-label{font:500 10.5px/1 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.sec-label::before{content:'';width:24px;height:1px;background:var(--gold)}
+.sec-title{font:300 clamp(2rem,3.5vw,3.4rem)/1.12 var(--font-display);color:var(--text);margin-bottom:32px}
+.sec-body{font:300 1.05rem/1.8 var(--font-body);color:var(--text-2);margin-bottom:24px}
+
+/* ═══ COMPANY CARDS ═══ */
+.company-section{padding:120px 80px;max-width:1400px;margin:0 auto}
+.company-section:nth-child(even){background:var(--off)}
+.company-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.company-img{border-radius:4px;overflow:hidden}
+.company-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
+
+/* ═══ FOOTER ═══ */
+.footer{background:#060E1C;padding:72px 80px 0}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1.2fr 1fr 1.1fr;gap:80px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.07)}
+.footer-brand-logo{display:flex;align-items:center;gap:10px;margin-bottom:18px;text-decoration:none}
+.footer-brand-logo img{height:44px}
+.footer-brand-tagline{font:300 .95rem/1.65 var(--font-display);color:rgba(255,255,255,.4);font-style:italic;margin-bottom:28px;max-width:240px}
+.footer-social{display:flex;gap:12px}
+.footer-social a{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;border-radius:2px;transition:border-color .25s,background .25s}
+.footer-social a:hover{border-color:var(--gold);background:rgba(201,169,74,.08)}
+.footer-col-title{font:600 10px/1 var(--font-body);letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer-links a{font:300 .9rem/1 var(--font-body);color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+.footer-addr-block{margin-bottom:24px}
+.footer-addr-tag{font:600 9px/1 var(--font-body);letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.footer-addr-text{font:300 .875rem/1.65 var(--font-body);color:rgba(255,255,255,.45)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid rgba(255,255,255,.05)}
+.footer-copy{font:300 11.5px/1 var(--font-body);color:rgba(255,255,255,.3)}
+.footer-staff{font:300 11.5px/1 var(--font-body);color:rgba(255,255,255,.3);display:flex;align-items:center;gap:8px}
+.footer-staff a{color:rgba(255,255,255,.35);text-decoration:none}
+.footer-staff a:hover{color:var(--gold)}
+.footer-dot{opacity:.3}
+
+@media(max-width:960px){
+  .nav{padding:0 24px}
+  .nav-links{display:none}
+  .page-header{padding:100px 24px 60px}
+  .company-section{padding:80px 24px}
+  .company-grid{grid-template-columns:1fr;gap:40px}
+  .footer{padding:56px 24px 0}
+  .footer-top{grid-template-columns:1fr;gap:48px}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/images/logo-dark.png" alt="Blue Seal Energy Group">
+    <span class="nav-logo-text">Blue Seal<br>Energy Group</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="companies.html">Companies</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="industries.html">Industries</a></li>
+    <li><a href="operations.html">Operations</a></li>
+    <li><a href="investors.html">Investors</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Partner With Us</a>
+</nav>
+
+<header class="page-header">
+  <div style="max-width:1280px;margin:0 auto;width:100%">
+    <div class="sec-label" style="color:var(--gold-2)">OUR GROUP</div>
+    <h1>Four Companies.<br>One Continental Vision.</h1>
+    <p>Specialized subsidiaries delivering end-to-end chemical solutions across critical industries.</p>
+  </div>
+</header>
+
+<!-- Blue Seal Chemical Production Plant -->
+<section class="company-section">
+  <div class="company-grid">
+    <div>
+      <div class="sec-label">FLAGSHIP FACILITY</div>
+      <h2 style="font:600 2rem/1.2 var(--font-body);color:var(--text);margin-bottom:16px">Blue Seal Chemical Production Plant Ltd</h2>
+      <p style="font:500 .875rem/1 var(--font-body);color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:24px">$12.5M Manufacturing Facility</p>
+      <p class="sec-body">Our world-class production facility in Ibeju-Lekki, Lagos — the beating heart of Blue Seal's manufacturing operations. Producing up to 5 million litres per day across oilfield, water treatment, environmental, and specialty chemicals.</p>
+      <p class="sec-body">The plant represents the largest indigenous chemical manufacturing investment in West Africa, featuring state-of-the-art equipment and processes that meet international quality standards.</p>
+    </div>
+    <div class="company-img">
+      <img src="assets/images/20250805_115719@-1977798145.jpg" alt="Blue Seal Chemical Production Plant">
+    </div>
+  </div>
+</section>
+
+<!-- Blue Seal Chemical -->
+<section class="company-section">
+  <div class="company-grid" style="grid-template-columns:1fr 1fr">
+    <div class="company-img" style="order:1">
+      <img src="assets/images/FULFILLING AN ORDER.jpg" alt="Blue Seal Chemical Operations">
+    </div>
+    <div style="order:2">
+      <div class="sec-label">OILFIELD CHEMICALS</div>
+      <h2 style="font:600 2rem/1.2 var(--font-body);color:var(--text);margin-bottom:16px">Blue Seal Chemical</h2>
+      <p class="sec-body">Comprehensive oilfield chemicals and production solutions for upstream, midstream, and downstream operations across the oil and gas value chain.</p>
+      <ul style="list-style:none;padding:0;margin:24px 0">
+        <li style="padding:8px 0;color:var(--text-2);display:flex;gap:12px">
+          <span style="color:var(--gold)">●</span>
+          <span>Drilling fluids and additives</span>
+        </li>
+        <li style="padding:8px 0;color:var(--text-2);display:flex;gap:12px">
+          <span style="color:var(--gold)">●</span>
+          <span>Production chemicals</span>
+        </li>
+        <li style="padding:8px 0;color:var(--text-2);display:flex;gap:12px">
+          <span style="color:var(--gold)">●</span>
+          <span>Enhanced oil recovery solutions</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Blue Seal Water Solutions -->
+<section class="company-section">
+  <div class="company-grid">
+    <div>
+      <div class="sec-label">WATER TREATMENT</div>
+      <h2 style="font:600 2rem/1.2 var(--font-body);color:var(--text);margin-bottom:16px">Blue Seal Water Solutions</h2>
+      <p class="sec-body">Advanced water treatment chemicals for municipal, industrial, and commercial applications. Ensuring clean, safe water across Africa.</p>
+      <ul style="list-style:none;padding:0;margin:24px 0">
+        <li style="padding:8px 0;color:var(--text-2);display:flex;gap:12px">
+          <span style="color:var(--gold)">●</span>
+          <span>Municipal water treatment</span>
+        </li>
+        <li style="padding:8px 0;color:var(--text-2);display:flex;gap:12px">
+          <span style="color:var(--gold)">●</span>
+          <span>Industrial wastewater management</span>
+        </li>
+        <li style="padding:8px 0;color:var(--text-2);display:flex;gap:12px">
+          <span style="color:var(--gold)">●</span>
+          <span>Specialty treatment chemicals</span>
+        </li>
+      </ul>
+    </div>
+    <div class="company-img">
+      <img src="assets/images/drone - Edited (1).jpg" alt="Blue Seal Water Solutions">
+    </div>
+  </div>
+</section>
+
+<!-- Blue Seal Agro-Allied -->
+<section class="company-section">
+  <div class="company-grid">
+    <div class="company-img" style="order:1">
+      <img src="assets/images/BSCPP LAUNCH PIC.jpg" alt="Blue Seal Agro-Allied">
+    </div>
+    <div style="order:2">
+      <div class="sec-label">AGRICULTURAL SOLUTIONS</div>
+      <h2 style="font:600 2rem/1.2 var(--font-body);color:var(--text);margin-bottom:16px">Blue Seal Agro-Allied</h2>
+      <p class="sec-body">Agricultural chemicals, soil conditioners, and fertilizer additives designed for sustainable farming and maximum crop yields.</p>
+      <ul style="list-style:none;padding:0;margin:24px 0">
+        <li style="padding:8px 0;color:var(--text-2);display:flex;gap:12px">
+          <span style="color:var(--gold)">●</span>
+          <span>Soil conditioners and enhancers</span>
+        </li>
+        <li style="padding:8px 0;color:var(--text-2);display:flex;gap:12px">
+          <span style="color:var(--gold)">●</span>
+          <span>Crop protection chemicals</span>
+        </li>
+        <li style="padding:8px 0;color:var(--text-2);display:flex;gap:12px">
+          <span style="color:var(--gold)">●</span>
+          <span>Fertilizer additives</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Blue Seal Environmental -->
+<section class="company-section">
+  <div class="company-grid">
+    <div>
+      <div class="sec-label">ENVIRONMENTAL SERVICES</div>
+      <h2 style="font:600 2rem/1.2 var(--font-body);color:var(--text);margin-bottom:16px">Blue Seal Environmental</h2>
+      <p class="sec-body">Environmental remediation, spill response, and waste management solutions. Protecting Africa's natural environment while supporting industrial development.</p>
+      <ul style="list-style:none;padding:0;margin:24px 0">
+        <li style="padding:8px 0;color:var(--text-2);display:flex;gap:12px">
+          <span style="color:var(--gold)">●</span>
+          <span>Environmental remediation</span>
+        </li>
+        <li style="padding:8px 0;color:var(--text-2);display:flex;gap:12px">
+          <span style="color:var(--gold)">●</span>
+          <span>Spill response and cleanup</span>
+        </li>
+        <li style="padding:8px 0;color:var(--text-2);display:flex;gap:12px">
+          <span style="color:var(--gold)">●</span>
+          <span>Waste management solutions</span>
+        </li>
+      </ul>
+    </div>
+    <div class="company-img">
+      <img src="assets/images/solar-8499901_1280.jpg" alt="Blue Seal Environmental">
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="footer-brand-logo">
+          <img src="assets/images/logo-light.png" alt="Blue Seal Energy Group">
+        </a>
+        <p class="footer-brand-tagline">Manufacturing Africa's Future — one facility at a time.</p>
+        <div class="footer-social">
+          <a href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="companies.html">Companies</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Our Offices</div>
+        <div class="footer-addr-block">
+          <div class="footer-addr-tag">Lagos Factory</div>
+          <div class="footer-addr-text">Blue Seal Chemical Production Plant<br>Origanrigan, Ibeju-Lekki<br>Lagos State, Nigeria</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Blue Seal Energy Group</span>
+      <span class="footer-staff">
+        Staff: <a href="https://bluesealenergy.com/webmail" target="_blank">Webmail</a>
+        <span class="footer-dot">·</span>
+        <a href="https://bluesealerp.com" target="_blank">ERP Portal</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.body.classList.add('loaded');
+document.getElementById('nav').classList.add('loaded');
+</script>
+</body>
+</html>

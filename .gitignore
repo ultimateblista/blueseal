@@ -1,0 +1,14 @@
+# Development files
+.claude/
+nul
+
+# Production builds
+blueseal-production.zip
+
+# Documentation
+*.md
+!README.md
+
+# OS files
+.DS_Store
+Thumbs.db

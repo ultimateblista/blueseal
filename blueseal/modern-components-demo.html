@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Components Demo | Blue Seal Energy Group</title>
+  <meta name="description" content="Modern UI components showcase for Blue Seal Energy Group website">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/modern-components.css">
+
+  <style>
+    /* Demo-specific styles */
+    .demo-section {
+      padding: 100px 0;
+      position: relative;
+    }
+    .demo-section:nth-child(even) {
+      background: var(--off-white);
+    }
+    .demo-title {
+      font: 600 32px/1.2 var(--font-display);
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .demo-description {
+      font: 400 16px/1.7 var(--font-body);
+      color: var(--text-body);
+      text-align: center;
+      margin-bottom: 60px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       COMPONENT 1: PREMIUM NAVIGATION
+       ============================================ -->
+
+  <nav class="nav-premium">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <a href="index.html" style="display: flex; align-items: center;">
+          <img src="assets/images/logo-dark.png" alt="Blue Seal Energy Group" style="height: 48px;">
+        </a>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <a href="#" class="nav-premium-link">Home</a>
+          <a href="#" class="nav-premium-link">About</a>
+          <a href="#" class="nav-premium-link">Products</a>
+          <a href="#" class="nav-premium-link">Operations</a>
+          <a href="#" class="nav-premium-link">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       COMPONENT 2: MODERN HERO SECTION
+       ============================================ -->
+
+  <section class="hero-modern">
+    <!-- Animated Mesh Gradient -->
+    <div class="hero-mesh-gradient"></div>
+
+    <!-- Floating Particles -->
+    <div class="hero-particles">
+      <div class="particle-dot"></div>
+      <div class="particle-dot"></div>
+      <div class="particle-dot"></div>
+      <div class="particle-dot"></div>
+      <div class="particle-dot"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="container" style="position: relative; z-index: 2;">
+      <div style="max-width: 1100px; margin: 0 auto;">
+        <div class="reveal">
+          <span class="section-label">Pan-African Industrial Leadership</span>
+          <h1 style="font: 300 clamp(3rem, 7vw, 6.5rem)/1.1 var(--font-display); color: var(--white); margin-bottom: 24px;">
+            Manufacturing<br>Africa's Future.
+          </h1>
+          <p style="font: 400 20px/1.7 var(--font-body); color: rgba(255,255,255,0.85); margin-bottom: 48px; max-width: 640px;">
+            Africa's leading indigenous chemical manufacturer. 5 million litres. 20+ industries. One mission.
+          </p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 80px;">
+            <a href="#products" class="btn-gradient-gold">Explore Products</a>
+            <a href="#contact" class="btn-glass-border">Partner With Us</a>
+          </div>
+        </div>
+
+        <!-- Glassmorphic Stat Cards -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 60px;">
+
+          <div class="stat-glass-card reveal">
+            <span class="stat-glass-icon">🏭</span>
+            <span class="stat-glass-number" data-target="5000000" data-suffix="">5M</span>
+            <span class="stat-glass-label">Litres Daily Capacity</span>
+          </div>
+
+          <div class="stat-glass-card reveal">
+            <span class="stat-glass-icon">💼</span>
+            <span class="stat-glass-number" data-target="2000" data-suffix="+">0</span>
+            <span class="stat-glass-label">Jobs Created</span>
+          </div>
+
+          <div class="stat-glass-card reveal">
+            <span class="stat-glass-icon">🌍</span>
+            <span class="stat-glass-number" data-target="20" data-suffix="+">0</span>
+            <span class="stat-glass-label">Industries Served</span>
+          </div>
+
+          <div class="stat-glass-card reveal">
+            <span class="stat-glass-icon">💰</span>
+            <span class="stat-glass-number" data-target="12500000" data-suffix="">0</span>
+            <span class="stat-glass-label">Investment ($)</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       COMPONENT 3: ELEVATED PRODUCT CARDS
+       ============================================ -->
+
+  <section class="demo-section">
+    <div class="container">
+      <h2 class="demo-title">Premium Product Cards</h2>
+      <p class="demo-description">
+        Elevated cards with hover transformations, sophisticated shadows, and modern iconography
+      </p>
+
+      <div class="grid-3" style="margin-top: 60px;">
+
+        <!-- Product Card 1 -->
+        <div class="product-card-elevated">
+          <div class="product-card-image">
+            <div class="product-card-icon">⚗️</div>
+          </div>
+          <div class="product-card-content">
+            <span class="product-card-tag">Oilfield</span>
+            <h3 class="product-card-title">Drilling Fluids</h3>
+            <p class="product-card-description">
+              Advanced drilling fluid systems engineered for optimal performance in challenging well conditions across Africa's oil and gas fields.
+            </p>
+            <a href="#" class="product-card-link">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="product-card-elevated">
+          <div class="product-card-image">
+            <div class="product-card-icon">💧</div>
+          </div>
+          <div class="product-card-content">
+            <span class="product-card-tag">Water Treatment</span>
+            <h3 class="product-card-title">Industrial Water Solutions</h3>
+            <p class="product-card-description">
+              Comprehensive water treatment chemicals for municipal, industrial, and commercial applications throughout the continent.
+            </p>
+            <a href="#" class="product-card-link">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="product-card-elevated">
+          <div class="product-card-image">
+            <div class="product-card-icon">🌱</div>
+          </div>
+          <div class="product-card-content">
+            <span class="product-card-tag">Agriculture</span>
+            <h3 class="product-card-title">Agro-Allied Chemicals</h3>
+            <p class="product-card-description">
+              Specialized agricultural chemicals designed to enhance crop yields and support Africa's agricultural transformation.
+            </p>
+            <a href="#" class="product-card-link">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       COMPONENT 4: ANIMATED STATS SECTION
+       ============================================ -->
+
+  <section class="stats-modern-section">
+    <div class="container">
+      <div class="reveal" style="text-align: center; margin-bottom: 60px;">
+        <span class="section-label">Our Impact</span>
+        <h2 style="font: 300 clamp(2rem, 4vw, 3rem)/1.2 var(--font-display); color: var(--white); margin-bottom: 16px;">
+          Manufacturing Excellence By The Numbers
+        </h2>
+        <p style="font: 400 18px/1.7 var(--font-body); color: rgba(255,255,255,0.8); max-width: 640px; margin: 0 auto;">
+          From our $12.5M facility in Lagos to Pan-African expansion
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; margin-top: 60px;">
+
+        <div class="stat-modern-card">
+          <span class="stat-modern-number" data-target="5000000" data-suffix="">0</span>
+          <span class="stat-modern-label">Daily Production</span>
+          <span class="stat-modern-sublabel">Litres Per Day</span>
+        </div>
+
+        <div class="stat-modern-card">
+          <span class="stat-modern-number" data-target="2000" data-suffix="+">0</span>
+          <span class="stat-modern-label">Jobs Created</span>
+          <span class="stat-modern-sublabel">Direct & Indirect</span>
+        </div>
+
+        <div class="stat-modern-card">
+          <span class="stat-modern-number" data-target="20" data-suffix="+">0</span>
+          <span class="stat-modern-label">Industries</span>
+          <span class="stat-modern-sublabel">Across Africa</span>
+        </div>
+
+        <div class="stat-modern-card">
+          <span class="stat-modern-number" data-target="3" data-suffix="">0</span>
+          <span class="stat-modern-label">Countries</span>
+          <span class="stat-modern-sublabel">Currently Active</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       COMPONENT 5: FEATURE CARDS WITH DEPTH
+       ============================================ -->
+
+  <section class="demo-section">
+    <div class="container">
+      <h2 class="demo-title">Feature Cards with Depth</h2>
+      <p class="demo-description">
+        Modern cards with sophisticated depth, hover effects, and gradient accents
+      </p>
+
+      <div class="grid-3" style="margin-top: 60px;">
+
+        <div class="feature-card-depth reveal">
+          <div class="feature-icon-modern">🔬</div>
+          <h3 class="feature-card-title">R&D Excellence</h3>
+          <p class="feature-card-description">
+            State-of-the-art research facilities developing next-generation chemical solutions tailored for African markets.
+          </p>
+        </div>
+
+        <div class="feature-card-depth reveal">
+          <div class="feature-icon-modern">✅</div>
+          <h3 class="feature-card-title">Quality Assurance</h3>
+          <p class="feature-card-description">
+            ISO-certified processes ensuring every product meets international standards and customer expectations.
+          </p>
+        </div>
+
+        <div class="feature-card-depth reveal">
+          <div class="feature-icon-modern">🌍</div>
+          <h3 class="feature-card-title">Pan-African Vision</h3>
+          <p class="feature-card-description">
+            Expanding across the continent with 10 factories planned over the next decade, creating thousands of jobs.
+          </p>
+        </div>
+
+        <div class="feature-card-depth reveal">
+          <div class="feature-icon-modern">♻️</div>
+          <h3 class="feature-card-title">Sustainability</h3>
+          <p class="feature-card-description">
+            Committed to environmental responsibility through green chemistry and renewable energy integration.
+          </p>
+        </div>
+
+        <div class="feature-card-depth reveal">
+          <div class="feature-icon-modern">🤝</div>
+          <h3 class="feature-card-title">Strategic Partnerships</h3>
+          <p class="feature-card-description">
+            Collaborating with global leaders and local stakeholders to drive industrial transformation.
+          </p>
+        </div>
+
+        <div class="feature-card-depth reveal">
+          <div class="feature-icon-modern">📈</div>
+          <h3 class="feature-card-title">Proven Growth</h3>
+          <p class="feature-card-description">
+            From trading company to manufacturer: 18 years of consistent growth and market leadership.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       COMPONENT 6: MODERN CTA SECTION
+       ============================================ -->
+
+  <section class="cta-modern">
+    <div class="container-narrow">
+      <div class="reveal">
+        <h2 class="cta-modern-title">
+          Ready to Partner With Africa's Industrial Future?
+        </h2>
+        <p class="cta-modern-description">
+          Whether you're a buyer, investor, or government partner — we're building the continent together. Join us in manufacturing Africa's future.
+        </p>
+        <div class="cta-button-group">
+          <a href="contact.html" class="btn-gradient-gold">Partner With Us</a>
+          <a href="products.html" class="btn-glass-border">Explore Products</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       DEMO: ALL BUTTON STYLES
+       ============================================ -->
+
+  <section class="demo-section">
+    <div class="container">
+      <h2 class="demo-title">Button Components</h2>
+      <p class="demo-description">
+        Modern gradient and glassmorphic buttons with sophisticated hover states
+      </p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 60px;">
+        <a href="#" class="btn-gradient-gold">Gradient Gold Button</a>
+        <a href="#" class="btn-glass-border">Glass Border Button</a>
+        <a href="#" class="btn-primary">Primary Button</a>
+        <a href="#" class="btn-secondary">Secondary Button</a>
+        <a href="#" class="btn-outline-dark">Outline Dark Button</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       INTEGRATION GUIDE
+       ============================================ -->
+
+  <section class="demo-section" style="background: var(--navy); color: var(--white); padding: 80px 0;">
+    <div class="container-narrow">
+      <h2 style="font: 600 32px/1.2 var(--font-display); color: var(--white); text-align: center; margin-bottom: 40px;">
+        Integration Guide
+      </h2>
+
+      <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 32px; margin-bottom: 32px;">
+        <h3 style="color: var(--gold); margin-bottom: 16px;">Step 1: Include Stylesheets</h3>
+        <pre style="background: rgba(0,0,0,0.3); padding: 16px; border-radius: 8px; overflow-x: auto; font-family: var(--font-mono); font-size: 13px; line-height: 1.6;"><code>&lt;link rel="stylesheet" href="assets/css/main.css"&gt;
+&lt;link rel="stylesheet" href="assets/css/components.css"&gt;
+&lt;link rel="stylesheet" href="assets/css/animations.css"&gt;
+&lt;link rel="stylesheet" href="assets/css/modern-components.css"&gt;</code></pre>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 32px; margin-bottom: 32px;">
+        <h3 style="color: var(--gold); margin-bottom: 16px;">Step 2: Include JavaScript</h3>
+        <pre style="background: rgba(0,0,0,0.3); padding: 16px; border-radius: 8px; overflow-x: auto; font-family: var(--font-mono); font-size: 13px; line-height: 1.6;"><code>&lt;script src="assets/js/main.js" defer&gt;&lt;/script&gt;
+&lt;script src="assets/js/counters.js" defer&gt;&lt;/script&gt;
+&lt;script src="assets/js/modern-interactions.js" defer&gt;&lt;/script&gt;</code></pre>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 32px;">
+        <h3 style="color: var(--gold); margin-bottom: 16px;">Step 3: Use Components</h3>
+        <p style="color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 16px;">
+          Copy the HTML structure from this demo page and paste into your pages. All components are production-ready and work with vanilla HTML/CSS/JS.
+        </p>
+        <ul style="color: rgba(255,255,255,0.7); line-height: 2; padding-left: 20px;">
+          <li>✓ No frameworks required (React, Vue, etc.)</li>
+          <li>✓ Fully responsive across all devices</li>
+          <li>✓ Accessible (WCAG 2.1 compliant)</li>
+          <li>✓ Optimized for performance</li>
+          <li>✓ Cross-browser compatible</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simple Footer -->
+  <footer style="background: var(--navy); color: var(--white); text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+    <p style="font: 400 14px/1.7 var(--font-body); color: rgba(255,255,255,0.7); margin: 0;">
+      &copy; 2026 Blue Seal Energy Group. Modern Components Demo.
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/counters.js" defer></script>
+  <script src="assets/js/modern-interactions.js" defer></script>
+
+</body>
+</html>
