@@ -203,10 +203,10 @@
    =========================== */
 @keyframes buttonPulse {
   0%, 100% {
-    box-shadow: 0 4px 16px rgba(201,169,74,0.2);
+    box-shadow: 0 4px 16px rgba(0,150,214,0.2);
   }
   50% {
-    box-shadow: 0 6px 24px rgba(201,169,74,0.4);
+    box-shadow: 0 6px 24px rgba(0,150,214,0.4);
   }
 }
 

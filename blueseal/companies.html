@@ -19,9 +19,9 @@ body.loaded{visibility:visible}
 :root{
   --navy:#0A1628;
   --navy-2:#0F2040;
-  --blue:#1565C0;
-  --gold:#C9A94A;
-  --gold-2:#E8C96A;
+  --blue:#0096D6;
+  --gold:#0096D6;
+  --gold-2:#33B9E8;
   --white:#FFFFFF;
   --off:#F6F7FA;
   --text:#0A1628;
@@ -29,7 +29,7 @@ body.loaded{visibility:visible}
   --text-3:#5A6A7E;
   --grad-hero:linear-gradient(135deg,#060E1C 0%,#0A1628 25%,#0F2040 50%,#0D3570 75%,#0A4A9A 100%);
   --grad-dark:linear-gradient(160deg,#0A1628 0%,#0F2040 50%,#122550 100%);
-  --grad-gold:linear-gradient(90deg,#A8832A 0%,#E8C96A 45%,#C9A94A 75%,#A8832A 100%);
+  --grad-gold:linear-gradient(90deg,#2A1A5E 0%,#6B46C1 45%,#3E2583 75%,#2A1A5E 100%);
   --font-display:'Cormorant Garamond',Georgia,serif;
   --font-body:'DM Sans',system-ui,sans-serif;
 }
@@ -46,7 +46,7 @@ body{font-family:var(--font-body);color:var(--text);background:var(--white);over
 .nav-links a::after{content:'';position:absolute;bottom:0;left:50%;right:50%;height:1px;background:var(--gold);transition:left .3s,right .3s}
 .nav-links a:hover{color:var(--white)}
 .nav-links a:hover::after{left:0;right:0}
-.nav-cta{font:600 11.5px/1 var(--font-body);color:var(--navy);background:var(--grad-gold);padding:12px 24px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:2px;box-shadow:0 4px 20px rgba(201,169,74,.3)}
+.nav-cta{font:600 11.5px/1 var(--font-body);color:#ffffff;background:var(--grad-gold);padding:12px 24px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:2px;box-shadow:0 4px 20px rgba(0,150,214,.3)}
 
 /* ═══ SECTIONS ═══ */
 .page-header{min-height:50vh;display:flex;align-items:center;background:var(--grad-hero);padding:140px 80px 80px;position:relative;overflow:hidden}
@@ -74,7 +74,7 @@ body{font-family:var(--font-body);color:var(--text);background:var(--white);over
 .footer-brand-tagline{font:300 .95rem/1.65 var(--font-display);color:rgba(255,255,255,.4);font-style:italic;margin-bottom:28px;max-width:240px}
 .footer-social{display:flex;gap:12px}
 .footer-social a{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;border-radius:2px;transition:border-color .25s,background .25s}
-.footer-social a:hover{border-color:var(--gold);background:rgba(201,169,74,.08)}
+.footer-social a:hover{border-color:var(--gold);background:rgba(0,150,214,.08)}
 .footer-col-title{font:600 10px/1 var(--font-body);letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:12px}
 .footer-links a{font:300 .9rem/1 var(--font-body);color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
@@ -90,6 +90,8 @@ body{font-family:var(--font-body);color:var(--text);background:var(--white);over
 .footer-dot{opacity:.3}
 
 @media(max-width:960px){
+  section[style*="padding"]{padding-left:24px !important;padding-right:24px !important}
+  header>div[style],div[style*="padding:0 80"]{padding-left:24px !important;padding-right:24px !important}
   .nav{padding:0 24px}
   .nav-links{display:none}
   .page-header{padding:100px 24px 60px}
@@ -99,6 +101,7 @@ body{font-family:var(--font-body);color:var(--text);background:var(--white);over
   .footer-top{grid-template-columns:1fr;gap:48px}
   .footer-bottom{flex-direction:column;gap:12px;text-align:center}
 }
+@media(max-width:480px){section[style*="padding"]{padding-left:16px !important;padding-right:16px !important}header>div[style]{padding-left:16px !important;padding-right:16px !important}}
 </style>
 </head>
 <body>

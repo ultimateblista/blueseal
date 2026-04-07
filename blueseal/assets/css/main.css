@@ -66,9 +66,9 @@ ul, ol {
   /* Brand Colors */
   --navy:          #0B1E3D;
   --navy-mid:      #1B3A6B;
-  --blue-bright:   #1565C0;
-  --gold:          #C9A94A;
-  --gold-light:    #E8C96A;
+  --blue-bright:   #0096D6;
+  --gold:          #0096D6;
+  --gold-light:    #33B9E8;
   --white:         #FFFFFF;
   --off-white:     #F7F8FA;
   --text-dark:     #0B1E3D;
@@ -78,13 +78,13 @@ ul, ol {
   /* Gradients */
   --grad-hero: linear-gradient(135deg, #050E1F 0%, #0B1E3D 30%, #0D3060 60%, #0A4A8A 85%, #0060B8 100%);
   --grad-section: linear-gradient(160deg, #0B1E3D 0%, #133060 100%);
-  --grad-gold: linear-gradient(90deg, #B8922A 0%, #E8C96A 50%, #B8922A 100%);
+  --grad-gold: linear-gradient(90deg, #0070A8 0%, #0096D6 50%, #0070A8 100%);
   --grad-card: linear-gradient(145deg, rgba(13,48,96,0.9) 0%, rgba(11,30,61,0.95) 100%);
 
   /* Glass Morphism */
   --glass-bg: rgba(255,255,255,0.04);
   --glass-border: rgba(255,255,255,0.10);
-  --glass-border-gold: rgba(201,169,74,0.35);
+  --glass-border-gold: rgba(0,150,214,0.35);
 
   /* Typography Scale */
   --text-hero:   clamp(3.5rem, 8vw, 7rem);
@@ -280,7 +280,7 @@ section.announcement {
 .img-placeholder-icon {
   width: 32px;
   height: 32px;
-  stroke: rgba(201,169,74,0.4);
+  stroke: rgba(0,150,214,0.4);
   stroke-width: 1.5;
   fill: none;
 }
@@ -292,7 +292,7 @@ section.announcement {
   line-height: 1;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(201,169,74,0.5);
+  color: rgba(0,150,214,0.5);
 }
 
 /* ===========================

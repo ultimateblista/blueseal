@@ -38,9 +38,9 @@
       --font-mono:'DM Mono',monospace;
       --navy:#0A1628;
       --navy-2:#0F2040;
-      --blue:#1565C0;
-      --gold:#C9A94A;
-      --gold-2:#E8C96A;
+      --blue:#0096D6;
+      --gold:#0096D6;
+      --gold-2:#33B9E8;
       --white:#FFFFFF;
       --off:#F6F7FA;
       --text:#0A1628;
@@ -48,7 +48,7 @@
       --text-3:#5A6A7E;
       --grad-hero:linear-gradient(135deg,#060E1C 0%,#0A1628 25%,#0F2040 50%,#0D3570 75%,#0A4A9A 100%);
       --grad-dark:linear-gradient(160deg,#0A1628 0%,#0F2040 50%,#122550 100%);
-      --grad-gold:linear-gradient(90deg,#A8832A 0%,#E8C96A 45%,#C9A94A 75%,#A8832A 100%);
+      --grad-gold:linear-gradient(90deg,#2A1A5E 0%,#6B46C1 45%,#3E2583 75%,#2A1A5E 100%);
     }
 
     /* LAYOUT */
@@ -111,7 +111,7 @@
     .badge{display:inline-block;background:var(--grad-gold);color:var(--navy);font:700 11px/1 var(--font-body);letter-spacing:0.15em;text-transform:uppercase;padding:10px 24px;border-radius:24px;margin-bottom:24px}
 
     /* SCP SECTION */
-    .scp-box{border:3px solid var(--gold);border-radius:8px;padding:80px;background:rgba(201,169,74,0.05);position:relative;overflow:hidden}
+    .scp-box{border:3px solid var(--gold);border-radius:8px;padding:80px;background:rgba(0,150,214,0.05);position:relative;overflow:hidden}
     @media(max-width:768px){.scp-box{padding:40px}}
     .scp-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center}
     @media(max-width:1024px){.scp-grid{grid-template-columns:1fr}}
@@ -124,7 +124,7 @@
     .form-group textarea{width:100%;padding:14px 16px;border:1px solid rgba(10,22,40,0.15);border-radius:4px;font:400 15px/1.4 var(--font-body);color:var(--text);background:var(--white);transition:all 0.2s}
     .form-group input:focus,
     .form-group select:focus,
-    .form-group textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,169,74,0.1)}
+    .form-group textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(0,150,214,0.1)}
     .form-group textarea{min-height:120px;resize:vertical}
 
     /* BUTTONS */
@@ -147,7 +147,8 @@
     .footer-bottom{padding:32px 0;text-align:center;font-size:14px}
     .footer-bottom a{display:inline;color:var(--gold)}
     .footer-bottom a:hover{text-decoration:underline}
-  </style>
+  @media(max-width:480px){section[style*="padding"]{padding-left:16px !important;padding-right:16px !important}header>div[style]{padding-left:16px !important;padding-right:16px !important}}
+</style>
 </head>
 <body>
 
@@ -218,7 +219,7 @@
   <section style="padding:140px 0;background:var(--grad-dark)">
     <div class="container">
       <div class="scp-box">
-        <div style="position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(201,169,74,0.15),transparent);pointer-events:none"></div>
+        <div style="position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(0,150,214,0.15),transparent);pointer-events:none"></div>
 
         <div style="position:relative;z-index:1">
           <div style="text-align:center;margin-bottom:40px">
@@ -442,12 +443,12 @@
             <p>Blue Seal Chemical Production Plant<br>Origanrigan, Ibeju-Lekki<br>Lagos State, Nigeria</p>
           </div>
           <div class="footer-address">
-            <strong>Port Harcourt Office</strong>
-            <p>Address to be confirmed</p>
+            <strong>Port Harcourt Warehouse &amp; Project Office</strong>
+            <p>5 Close 3, Off Road 1, Along East-West Road<br>Nkpolu Rumigbo, Obio/Akpor LGA<br>Port-Harcourt, Rivers State</p>
           </div>
           <div class="footer-address">
             <strong>Texas, USA Office</strong>
-            <p>Address to be confirmed</p>
+            <p>402, W Davis Street<br>Lulling, Texas 78648 USA
           </div>
         </div>
 

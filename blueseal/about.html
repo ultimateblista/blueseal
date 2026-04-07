@@ -19,9 +19,9 @@ body.loaded{visibility:visible}
 :root{
   --navy:#0A1628;
   --navy-2:#0F2040;
-  --blue:#1565C0;
-  --gold:#C9A94A;
-  --gold-2:#E8C96A;
+  --blue:#0096D6;
+  --gold:#0096D6;
+  --gold-2:#33B9E8;
   --white:#FFFFFF;
   --off:#F6F7FA;
   --text:#0A1628;
@@ -29,7 +29,7 @@ body.loaded{visibility:visible}
   --text-3:#5A6A7E;
   --grad-hero:linear-gradient(135deg,#060E1C 0%,#0A1628 25%,#0F2040 50%,#0D3570 75%,#0A4A9A 100%);
   --grad-dark:linear-gradient(160deg,#0A1628 0%,#0F2040 50%,#122550 100%);
-  --grad-gold:linear-gradient(90deg,#A8832A 0%,#E8C96A 45%,#C9A94A 75%,#A8832A 100%);
+  --grad-gold:linear-gradient(90deg,#2A1A5E 0%,#6B46C1 45%,#3E2583 75%,#2A1A5E 100%);
   --font-display:'Cormorant Garamond',Georgia,serif;
   --font-body:'DM Sans',system-ui,sans-serif;
   --font-mono:'DM Mono',monospace;
@@ -47,7 +47,7 @@ body{font-family:var(--font-body);color:var(--text);background:var(--white);over
 .nav-links a::after{content:'';position:absolute;bottom:0;left:50%;right:50%;height:1px;background:var(--gold);transition:left .3s,right .3s}
 .nav-links a:hover{color:var(--white)}
 .nav-links a:hover::after{left:0;right:0}
-.nav-cta{font:600 11.5px/1 var(--font-body);color:var(--navy);background:var(--grad-gold);padding:12px 24px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:opacity .25s,transform .25s;box-shadow:0 4px 20px rgba(201,169,74,.3)}
+.nav-cta{font:600 11.5px/1 var(--font-body);color:#ffffff;background:var(--grad-gold);padding:12px 24px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:opacity .25s,transform .25s;box-shadow:0 4px 20px rgba(0,150,214,.3)}
 .nav-cta:hover{opacity:.9;transform:translateY(-1px)}
 
 /* ═══ PAGE HEADER ═══ */
@@ -81,7 +81,7 @@ body{font-family:var(--font-body);color:var(--text);background:var(--white);over
 .footer-brand-tagline{font:300 .95rem/1.65 var(--font-display);color:rgba(255,255,255,.4);font-style:italic;margin-bottom:28px;max-width:240px}
 .footer-social{display:flex;gap:12px}
 .footer-social a{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;border-radius:2px;transition:border-color .25s,background .25s}
-.footer-social a:hover{border-color:var(--gold);background:rgba(201,169,74,.08)}
+.footer-social a:hover{border-color:var(--gold);background:rgba(0,150,214,.08)}
 .footer-social a svg{opacity:.55;transition:opacity .25s}
 .footer-social a:hover svg{opacity:1}
 .footer-col-title{font:600 10px/1 var(--font-body);letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
@@ -111,6 +111,12 @@ body{font-family:var(--font-body);color:var(--text);background:var(--white);over
   .footer{padding:56px 24px 0}
   .footer-top{grid-template-columns:1fr;gap:48px}
   .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+  section[style*="padding"]{padding-left:24px !important;padding-right:24px !important}
+  header .page-inner,header>div{padding-left:24px !important;padding-right:24px !important}
+}
+@media(max-width:480px){
+  section[style*="padding"]{padding-left:16px !important;padding-right:16px !important}
+  header>div{padding-left:16px !important;padding-right:16px !important}
 }
 </style>
 </head>
@@ -249,12 +255,12 @@ body{font-family:var(--font-body);color:var(--text);background:var(--white);over
           <div class="footer-addr-text">Blue Seal Chemical Production Plant<br>Origanrigan, Ibeju-Lekki<br>Lagos State, Nigeria</div>
         </div>
         <div class="footer-addr-block">
-          <div class="footer-addr-tag">Port Harcourt Office</div>
-          <div class="footer-addr-text">Address available on request</div>
+          <div class="footer-addr-tag">Port Harcourt Warehouse &amp; Project Office</div>
+          <div class="footer-addr-text">5 Close 3, Off Road 1, Along East-West Road<br>Nkpolu Rumigbo, Obio/Akpor LGA<br>Port-Harcourt, Rivers State</div>
         </div>
         <div class="footer-addr-block">
           <div class="footer-addr-tag">Texas, USA Office</div>
-          <div class="footer-addr-text">Address available on request</div>
+          <div class="footer-addr-text">402, W Davis Street<br>Lulling, Texas 78648 USA</div>
         </div>
       </div>
     </div>
