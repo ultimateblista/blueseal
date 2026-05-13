@@ -240,8 +240,9 @@ body{font-family:var(--font-body);color:var(--text);background:var(--white);over
 }
 @media(max-width:480px){section[style*="padding"]{padding-left:16px !important;padding-right:16px !important}header>div[style]{padding-left:16px !important;padding-right:16px !important}}
 </style>
+<link rel="stylesheet" href="assets/css/visual-refresh.css">
 </head>
-<body>
+<body class="home-redesign">
 
 <!-- ═══ NAV ═══ -->
 <nav class="nav" id="nav">
@@ -262,6 +263,121 @@ body{font-family:var(--font-body);color:var(--text);background:var(--white);over
   </ul>
   <a href="contact.html" class="nav-cta">Partner With Us</a>
 </nav>
+
+<main class="home-next">
+  <section class="home-next-hero home-hero-v4">
+    <div class="home-hero-v4-media" aria-hidden="true">
+      <img src="assets/images/drone - Edited (1).jpg" alt="">
+    </div>
+
+    <div class="home-hero-v4-shell">
+      <div class="home-hero-v4-copy">
+        <div class="home-next-kicker">Blue Seal Energy Group</div>
+        <h1>Chemical manufacturing for Africa's industrial systems.</h1>
+        <p>We formulate, produce, and supply critical chemical solutions for oilfield operations, water infrastructure, environmental response, agriculture, and industrial production.</p>
+        <div class="home-next-actions">
+          <a href="products.html" class="home-next-primary">View Product Systems</a>
+          <a href="operations.html" class="home-next-secondary">See Operations</a>
+        </div>
+      </div>
+
+      <div class="home-hero-v4-system" aria-label="Blue Seal operating system">
+        <div class="home-hero-v4-terminal">
+          <span>Production Status</span>
+          <strong>5M L/day</strong>
+          <p>Ibeju-Lekki facility configured for regional industrial chemical supply.</p>
+        </div>
+        <div class="home-hero-v4-map">
+          <span>Lagos</span>
+          <span>Port Harcourt</span>
+          <span>Texas</span>
+        </div>
+        <div class="home-hero-v4-products">
+          <a href="products-oilfield.html">Oilfield</a>
+          <a href="products-water.html">Water</a>
+          <a href="products-environmental.html">Environmental</a>
+          <a href="products-specialty.html">Specialty</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-hero-v4-rail" aria-label="Blue Seal key metrics">
+      <div><span>Facility</span><strong>$12.5M</strong></div>
+      <div><span>Industries</span><strong>20+</strong></div>
+      <div><span>Jobs Supported</span><strong>2,000+</strong></div>
+      <div><span>Continental Plan</span><strong>10 Factories</strong></div>
+    </div>
+  </section>
+
+  <section class="home-next-section home-next-proof">
+    <div class="home-next-section-head">
+      <span>Operational Scale</span>
+      <h2>Not a brochure. A manufacturing platform.</h2>
+    </div>
+    <div class="home-next-proof-grid">
+      <article>
+        <strong>2006</strong>
+        <span>Founded with a mandate to build indigenous chemical capacity.</span>
+      </article>
+      <article>
+        <strong>2,000+</strong>
+        <span>Direct and indirect jobs connected to Blue Seal operations.</span>
+      </article>
+      <article>
+        <strong>3</strong>
+        <span>Countries active across Nigeria, the United States, and regional partnerships.</span>
+      </article>
+      <article>
+        <strong>10</strong>
+        <span>Factories envisioned across Africa over the next 10-15 years.</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="home-next-section home-next-capabilities">
+    <div class="home-next-media">
+      <img src="assets/images/drone - Edited (1).jpg" alt="Blue Seal production plant aerial view">
+    </div>
+    <div class="home-next-capability-copy">
+      <span>Capabilities</span>
+      <h2>Chemical solutions engineered close to the industries that need them.</h2>
+      <p>Blue Seal combines formulation knowledge, plant capacity, and local market intelligence to support critical sectors where supply reliability matters.</p>
+      <div class="home-next-capability-list">
+        <a href="products-oilfield.html">Oilfield production chemicals</a>
+        <a href="products-water.html">Industrial water treatment</a>
+        <a href="products-environmental.html">Remediation and response</a>
+        <a href="products-specialty.html">Specialty formulations</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-next-section home-next-newsroom">
+    <div class="home-next-section-head">
+      <span>Momentum</span>
+      <h2>Expansion with institutional ambition.</h2>
+    </div>
+    <div class="home-next-news-grid">
+      <a href="news.html">
+        <small>Milestone</small>
+        <strong>$12.5M production plant launched in Lagos.</strong>
+      </a>
+      <a href="operations.html">
+        <small>Expansion</small>
+        <strong>Factory 2 planned for Delta Special Economic Zone.</strong>
+      </a>
+      <a href="contact.html">
+        <small>Commercial</small>
+        <strong>Buyer, government, and investor enquiries now open.</strong>
+      </a>
+    </div>
+  </section>
+
+  <section class="home-next-cta">
+    <span>Build With Blue Seal</span>
+    <h2>Bring us your supply challenge. We will bring industrial chemistry to the table.</h2>
+    <a href="contact.html">Start a Conversation</a>
+  </section>
+</main>
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
@@ -630,5 +746,6 @@ const counterObs=new IntersectionObserver((entries)=>{
 },{threshold:.5});
 document.querySelectorAll('.impact-num').forEach(el=>counterObs.observe(el));
 </script>
+<script src="assets/js/visual-refresh.js" defer></script>
 </body>
 </html>

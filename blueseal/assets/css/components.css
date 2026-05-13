@@ -118,7 +118,8 @@
 }
 
 /* Mobile Menu */
-.nav-mobile {
+.nav-mobile,
+.nav-mobile-menu {
   position: fixed;
   top: 0;
   right: -100%;
@@ -134,11 +135,13 @@
   z-index: 999;
 }
 
-.nav-mobile.active {
+.nav-mobile.active,
+.nav-mobile-menu.active {
   right: 0;
 }
 
-.nav-mobile a {
+.nav-mobile a,
+.nav-mobile-menu a {
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -147,7 +150,8 @@
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.nav-mobile a:hover {
+.nav-mobile a:hover,
+.nav-mobile-menu a:hover {
   color: var(--gold);
   transform: translateX(8px);
 }

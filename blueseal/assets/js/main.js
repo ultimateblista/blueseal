@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
      MOBILE HAMBURGER MENU
      =========================== */
   const hamburger = document.querySelector('.nav-hamburger');
-  const mobileMenu = document.querySelector('.nav-mobile');
+  const mobileMenu = document.querySelector('.nav-mobile, .nav-mobile-menu');
 
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', () => {
