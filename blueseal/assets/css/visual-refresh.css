@@ -2849,3 +2849,34 @@ body.home-redesign > div.factory2 {
     flex: 0 1 auto !important;
   }
 }
+
+/* Keep the brand wordmark visible on mobile */
+@media (max-width: 760px) {
+  .nav-logo {
+    min-width: 0 !important;
+    max-width: calc(100% - 56px) !important;
+    gap: 10px !important;
+    overflow: hidden !important;
+  }
+
+  .nav-logo-text,
+  .nav-brand-text {
+    display: block !important;
+    min-width: 0 !important;
+    max-width: 150px !important;
+    color: #fff !important;
+    font-size: 13px !important;
+    line-height: 1.12 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+    white-space: normal !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-logo-text,
+  .nav-brand-text {
+    max-width: 122px !important;
+    font-size: 12px !important;
+  }
+}
