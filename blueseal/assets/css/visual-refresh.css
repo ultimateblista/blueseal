@@ -2763,3 +2763,89 @@ body.home-redesign > div.factory2 {
     padding-top: 104px !important;
   }
 }
+
+/* Final mobile hamburger normalization */
+@media (max-width: 900px) {
+  .nav {
+    height: 58px !important;
+    min-height: 58px !important;
+    padding: 8px 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+  }
+
+  .site-nav {
+    height: auto !important;
+    padding: 0 !important;
+  }
+
+  .nav-hamburger,
+  button.nav-hamburger,
+  div.nav-hamburger {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    z-index: 1002 !important;
+    width: 42px !important;
+    min-width: 42px !important;
+    max-width: 42px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    max-height: 42px !important;
+    padding: 0 !important;
+    margin: 0 0 0 auto !important;
+    display: inline-flex !important;
+    flex: 0 0 42px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 14px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+    line-height: 1 !important;
+    transform: none !important;
+  }
+
+  .nav-hamburger span {
+    display: block !important;
+    width: 19px !important;
+    min-width: 19px !important;
+    height: 2px !important;
+    min-height: 2px !important;
+    margin: 0 !important;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.92) !important;
+    transform-origin: center !important;
+  }
+
+  .nav-hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg) !important;
+  }
+
+  .nav-hamburger.active span:nth-child(2) {
+    opacity: 0 !important;
+  }
+
+  .nav-hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav,
+  .site-nav {
+    left: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    transform: none !important;
+  }
+
+  .nav-logo {
+    flex: 0 1 auto !important;
+  }
+}
